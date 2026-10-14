@@ -6,10 +6,10 @@
     <title>Shahzaib Parvaiz // Full-Stack Developer (Backend & Spring Boot)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+    <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -19,23 +19,32 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        obsidian: '#06080f',
+                        obsidian: '#09090b',
+                        slate: {
+                            950: '#09090b',
+                            900: '#121215',
+                            800: '#1f1f24',
+                            700: '#2e2e36',
+                            400: '#9494a1',
+                            300: '#c4c4cc',
+                            200: '#e4e4e9'
+                        },
                         cyber: {
-                            cyan: '#00f2fe',
-                            indigo: '#6366f1',
-                            emerald: '#10b981',
-                            amber: '#f59e0b',
-                            rose: '#f43f5e'
+                            cyan: '#f4f4f6',
+                            indigo: '#818cf8',
+                            emerald: '#34d399',
+                            amber: '#d4a373',
+                            rose: '#fb7185'
                         }
                     },
                     animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'spin-slow': 'spin 10s linear infinite',
+                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 28s linear infinite',
                     }
                 }
             }
@@ -55,89 +64,118 @@
                 imgEl.src = 'https://github.com/ShahzaibParvaiz.png';
             } else {
                 imgEl.onerror = null;
-                imgEl.src = 'https://placehold.co/400x400/0f172a/00f2fe?text=SP';
+                imgEl.src = 'https://placehold.co/400x400/121215/f4f4f6?text=SP';
             }
         };
     </script>
 
     <style>
         :root {
-            --accent-cyan: #00f2fe;
-            --accent-indigo: #6366f1;
-            --bg-obsidian: #06080f;
+            --accent-cyan: #f4f4f6;
+            --accent-indigo: #818cf8;
+            --bg-obsidian: #09090b;
         }
 
         body {
             background-color: var(--bg-obsidian);
-            color: #e2e8f0;
+            color: #e4e4e7;
             overflow-x: hidden;
+            letter-spacing: -0.011em;
+        }
+
+        h1, h2, h3, .font-display {
+            letter-spacing: -0.028em;
         }
 
         ::selection {
-            background: rgba(0, 242, 254, 0.25);
-            color: #00f2fe;
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
         }
 
-        /* Custom Scrollbar */
+        /* Minimalist Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #06080f;
+            background: #09090b;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-            border: 1px solid rgba(0, 242, 254, 0.2);
+            background: #27272a;
+            border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #334155;
-            border-color: #00f2fe;
+            background: #3f3f46;
         }
 
-        /* Frosted Glassmorphism */
+        /* Architectural Matte Card with Interactive Mouse Spotlight */
         .glass-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(148, 163, 184, 0.14);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            background: rgba(18, 18, 21, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.07) !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                        border-color 0.35s ease,
+                        background-color 0.35s ease,
+                        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(
+                550px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+                rgba(255, 255, 255, 0.045),
+                transparent 45%
+            );
+            pointer-events: none;
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .glass-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .glass-card:hover {
-            border-color: rgba(0, 242, 254, 0.35);
-            box-shadow: 0 12px 40px -10px rgba(0, 242, 254, 0.16), 0 0 25px -5px rgba(99, 102, 241, 0.12);
+            border-color: rgba(255, 255, 255, 0.15) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 18px 38px -15px rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
         }
 
         .glass-nav {
-            background: rgba(6, 8, 15, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            background: rgba(9, 9, 11, 0.82);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        /* Neon Text & Borders */
+        /* Clean Typographic Emphasis (Replaced Neon Glows) */
         .text-glow-cyan {
-            text-shadow: 0 0 20px rgba(0, 242, 254, 0.45);
+            text-shadow: none;
         }
         .border-glow-cyan {
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.28), inset 0 0 15px rgba(0, 242, 254, 0.08);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
         }
 
-        /* Holographic Conic Avatar Ring */
+        /* Refined Studio Portrait Bezel Ring */
         .holo-ring {
-            background: conic-gradient(from 0deg, #00f2fe, #6366f1, #10b981, #00f2fe);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05), rgba(129, 140, 248, 0.25));
         }
 
         /* 3D Tilt Container */
         .tilt-card {
             transform-style: preserve-3d;
             will-change: transform;
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        /* Custom Dual-Ring Cursor (Desktop Only) */
+        /* Subtle Architectural Cursor (Desktop Only) */
         @media (pointer: fine) {
             .cursor-dot, .cursor-ring {
                 position: fixed;
@@ -149,25 +187,27 @@
                 transform: translate(-50%, -50%);
             }
             .cursor-dot {
-                width: 6px;
-                height: 6px;
-                background-color: #00f2fe;
-                box-shadow: 0 0 10px #00f2fe;
+                width: 4px;
+                height: 4px;
+                background-color: rgba(255, 255, 255, 0.85);
+                transition: transform 0.15s ease;
             }
             .cursor-ring {
-                width: 34px;
-                height: 34px;
-                border: 1.5px solid rgba(0, 242, 254, 0.5);
-                transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                            height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-                            border-color 0.2s,
-                            background-color 0.2s;
+                width: 28px;
+                height: 28px;
+                border: 1px solid rgba(255, 255, 255, 0.16);
+                transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                            height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                            border-color 0.25s ease,
+                            background-color 0.25s ease,
+                            left 0.06s linear,
+                            top 0.06s linear;
             }
             .cursor-ring.hovered {
-                width: 54px;
-                height: 54px;
-                border-color: #6366f1;
-                background-color: rgba(99, 102, 241, 0.12);
+                width: 44px;
+                height: 44px;
+                border-color: rgba(255, 255, 255, 0.35);
+                background-color: rgba(255, 255, 255, 0.03);
             }
         }
         @media (pointer: coarse) {
@@ -176,44 +216,37 @@
             }
         }
 
-        /* Subtle Grid Overlay */
+        /* Minimalist Dot Matrix Background */
         .bg-grid-pattern {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 50%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 50%, transparent 100%);
         }
 
-        /* Perspective Highlight Pulse */
+        /* Perspective Highlight State */
         .rbac-highlight {
-            border-color: #00f2fe !important;
-            box-shadow: 0 0 32px -4px rgba(0, 242, 254, 0.36) !important;
+            border-color: rgba(255, 255, 255, 0.28) !important;
+            box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.14) !important;
         }
 
-        /* Scanline effect */
+        /* Disabled noisy CRT scanlines for clean aesthetic */
         .scanlines {
-            background: linear-gradient(
-                to bottom,
-                rgba(255,255,255,0),
-                rgba(255,255,255,0) 50%,
-                rgba(0, 0, 0, 0.25) 50%,
-                rgba(0, 0, 0, 0.25)
-            );
-            background-size: 100% 4px;
+            display: none;
         }
 
-        /* Git-Graph Animated Node Pulse */
+        /* Git-Graph Node Active State */
         .git-node-active {
-            box-shadow: 0 0 0 4px rgba(0, 242, 254, 0.22), 0 0 18px #00f2fe;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
         }
 
         /* Urdu Nastaliq & Classical Poetry Typography */
         .font-urdu {
             font-family: 'Noto Nastaliq Urdu', 'Amiri', serif;
-            line-height: 2.25;
+            line-height: 2.2;
         }
 
-        /* Quantum Cyber-Reactor Portrait Stage Animations */
+        /* Subtle Ambient Orbital Ring Animations */
         @keyframes spinClockwiseSlow {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -222,507 +255,436 @@
             from { transform: rotate(360deg); }
             to { transform: rotate(0deg); }
         }
-        @keyframes biometricScan {
-            0% { top: -8%; opacity: 0; }
-            15% { opacity: 0.95; }
-            50% { top: 96%; opacity: 0.95; }
-            65% { opacity: 0; }
-            100% { top: -8%; opacity: 0; }
-        }
-        @keyframes holoGlitchShift {
-            0%, 91%, 100% {
-                transform: translate(0, 0) scale(1);
-                filter: none;
-            }
-            92% {
-                transform: translate(-3px, 1px) scale(1.01);
-                filter: drop-shadow(3px 0 0 rgba(0, 242, 254, 0.75)) drop-shadow(-3px 0 0 rgba(244, 63, 94, 0.75));
-            }
-            94% {
-                transform: translate(3px, -1px) scale(1.015);
-                filter: drop-shadow(-3px 0 0 rgba(16, 185, 129, 0.75)) drop-shadow(3px 0 0 rgba(245, 158, 11, 0.75));
-            }
-            96% {
-                transform: translate(-1px, 2px);
-                filter: contrast(1.15) brightness(1.08);
-            }
-        }
         @keyframes floatBadge {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-3px); }
+        }
+        @keyframes slideSpringIn {
+            0% {
+                opacity: 0;
+                transform: translateY(16px) scale(0.99);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .ring-cw {
-            animation: spinClockwiseSlow 18s linear infinite;
+            animation: spinClockwiseSlow 42s linear infinite;
             transform-origin: center;
+            opacity: 0.32;
         }
         .ring-ccw {
-            animation: spinCounterSlow 14s linear infinite;
+            animation: spinCounterSlow 34s linear infinite;
             transform-origin: center;
+            opacity: 0.24;
         }
         .ring-cw-fast {
-            animation: spinClockwiseSlow 9s linear infinite;
+            animation: spinClockwiseSlow 26s linear infinite;
             transform-origin: center;
+            opacity: 0.18;
         }
-        .portrait-stage-group:hover .ring-cw {
-            animation-duration: 6s;
-        }
-        .portrait-stage-group:hover .ring-ccw {
-            animation-duration: 5s;
-        }
+        /* Hide noisy laser bar in minimalist mode */
         .laser-scan-bar {
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #00f2fe, #10b981, #00f2fe, transparent);
-            box-shadow: 0 0 18px 3px rgba(0, 242, 254, 0.85);
-            animation: biometricScan 4.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-            pointer-events: none;
-            z-index: 25;
+            display: none !important;
         }
-        .laser-scan-bar.crimson-laser {
-            background: linear-gradient(90deg, transparent, #f59e0b, #f43f5e, #f59e0b, transparent);
-            box-shadow: 0 0 18px 3px rgba(245, 158, 11, 0.85);
-        }
+        /* Smooth portrait hover instead of glitch */
         .holo-glitch-active {
-            animation: holoGlitchShift 6.5s infinite;
+            animation: none;
         }
-        .float-node-1 { animation: floatBadge 3.4s ease-in-out infinite; }
-        .float-node-2 { animation: floatBadge 4.1s ease-in-out infinite 0.7s; }
-        .float-node-3 { animation: floatBadge 3.8s ease-in-out infinite 1.3s; }
-        .float-node-4 { animation: floatBadge 4.5s ease-in-out infinite 0.4s; }
+        .float-node-1 { animation: floatBadge 5s ease-in-out infinite; }
+        .float-node-2 { animation: floatBadge 5.8s ease-in-out infinite 0.8s; }
+        .float-node-3 { animation: floatBadge 5.4s ease-in-out infinite 1.4s; }
+        .float-node-4 { animation: floatBadge 6.2s ease-in-out infinite 0.5s; }
 
-        /* Studio-to-Dark Rim-Light Vignette so white photo backgrounds blend seamlessly */
+        /* Studio-to-Dark Soft Vignette */
         .studio-dark-blend {
-            box-shadow: inset 0 0 34px 12px rgba(6, 8, 15, 0.88), inset 0 -24px 36px 8px rgba(6, 8, 15, 0.92);
+            box-shadow: inset 0 0 28px 8px rgba(9, 9, 11, 0.72), inset 0 -18px 28px 6px rgba(9, 9, 11, 0.8);
         }
         .portrait-img-quantum {
-            filter: contrast(1.07) saturate(1.06) drop-shadow(0 0 18px rgba(0, 242, 254, 0.25));
+            filter: contrast(1.04) saturate(1.02);
         }
         .portrait-img-crimson {
-            filter: contrast(1.09) saturate(1.12) sepia(0.08) drop-shadow(0 0 22px rgba(244, 63, 94, 0.35));
+            filter: contrast(1.06) saturate(1.08) sepia(0.05);
         }
         .portrait-img-matrix {
-            filter: contrast(1.18) hue-rotate(-10deg) saturate(1.2) drop-shadow(0 0 20px rgba(16, 185, 129, 0.45));
+            filter: grayscale(100%) contrast(1.12);
         }
         .portrait-img-studio {
-            filter: contrast(1.04) saturate(1.04);
+            filter: contrast(1.02) saturate(1.0);
         }
 
-        /* Multi-Slide Deck Transitions & Layout */
+        /* Multi-Slide Deck Spring Transitions & Staggered Reveal */
         .slide-panel {
             display: none;
             opacity: 0;
-            transform: translateY(14px) scale(0.992);
-            transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .slide-panel.active-slide {
             display: block;
             opacity: 1;
-            transform: translateY(0) scale(1);
+            animation: slideSpringIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
+        .slide-panel.active-slide .glass-card {
+            animation: slideSpringIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        }
+        .slide-panel.active-slide .glass-card:nth-child(1) { animation-delay: 0.04s; }
+        .slide-panel.active-slide .glass-card:nth-child(2) { animation-delay: 0.10s; }
+        .slide-panel.active-slide .glass-card:nth-child(3) { animation-delay: 0.16s; }
+        .slide-panel.active-slide .glass-card:nth-child(4) { animation-delay: 0.22s; }
+
         body.scroll-all-mode .slide-panel {
             display: block !important;
             opacity: 1 !important;
             transform: none !important;
-            margin-bottom: 4.5rem;
+            margin-bottom: 5rem;
         }
 
         /* Sleek Horizontal Scrollbar for Top Slide Bar */
         .nav-scroll {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(0, 242, 254, 0.35) rgba(15, 23, 42, 0.6);
+            scrollbar-width: none;
         }
         .nav-scroll::-webkit-scrollbar {
-            height: 4px;
-        }
-        .nav-scroll::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.6);
-            border-radius: 4px;
-        }
-        .nav-scroll::-webkit-scrollbar-thumb {
-            background: rgba(0, 242, 254, 0.35);
-            border-radius: 4px;
-        }
-        .nav-scroll::-webkit-scrollbar-thumb:hover {
-            background: #00f2fe;
+            display: none;
         }
     </style>
 </head>
-<body class="bg-obsidian text-slate-200 antialiased selection:bg-cyber-cyan/20 selection:text-cyber-cyan relative min-h-screen flex flex-col">
+<body class="bg-obsidian text-zinc-200 antialiased selection:bg-white/15 selection:text-white relative min-h-screen flex flex-col">
 
     <!-- Custom Magnetic Cursor -->
     <div id="cursor-dot" class="cursor-dot"></div>
     <div id="cursor-ring" class="cursor-ring"></div>
 
-    <!-- Interactive Particle Topology Canvas -->
-    <canvas id="topology-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-75"></canvas>
+    <!-- Interactive Particle Topology Canvas (Subtle Minimalist Constellation) -->
+    <canvas id="topology-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-35"></canvas>
     <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
 
-    <!-- Top Ambient Glows -->
-    <div class="fixed -top-40 -left-40 w-96 h-96 bg-cyber-indigo/20 rounded-full blur-[130px] pointer-events-none z-0"></div>
-    <div class="fixed top-1/3 -right-40 w-96 h-96 bg-cyber-cyan/15 rounded-full blur-[140px] pointer-events-none z-0"></div>
+    <!-- Subtle Ambient Monochrome & Slate Diffusion -->
+    <div class="fixed -top-48 left-1/4 w-[520px] h-[520px] bg-white/[0.025] rounded-full blur-[150px] pointer-events-none z-0"></div>
+    <div class="fixed top-1/3 -right-48 w-[460px] h-[460px] bg-indigo-500/[0.03] rounded-full blur-[160px] pointer-events-none z-0"></div>
 
     <!-- Toast Notification Container -->
     <div id="toast-container" class="fixed bottom-20 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- TOP ALLAMA IQBAL COUPLET BANNER (SINGLE-LINE ALIGNED, ZERO CLUTTER) -->
-    <div class="relative z-40 bg-gradient-to-r from-[#090d1a] via-[#130b1c] to-[#090d1a] border-b border-amber-500/30 px-4 py-1.5">
-        <div class="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-            <!-- Left: Badge + Crisp Single-Line Urdu Couplet -->
+    <!-- TOP ALLAMA IQBAL COUPLET BANNER (MINIMALIST EDITORIAL TOP STRIP) -->
+    <div class="relative z-40 bg-[#09090b]/90 border-b border-white/[0.06] px-4 py-2">
+        <div class="max-w-[1360px] mx-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+            <!-- Left: Subtle Tag + Single-Line Urdu Couplet -->
             <div class="flex items-center gap-3 min-w-0">
-                <span class="px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/40 font-mono text-[10px] text-amber-300 uppercase tracking-widest shrink-0 whitespace-nowrap flex items-center gap-1.5">
-                    <i class="fa-solid fa-feather-pointed text-amber-400"></i> Allama Iqbal • طلوعِ اسلام
+                <span class="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08] font-mono text-[10px] text-zinc-400 uppercase tracking-wider shrink-0 whitespace-nowrap">
+                    Allama Iqbal • طلوعِ اسلام
                 </span>
-                <p dir="rtl" lang="ur" class="font-urdu text-xs sm:text-sm text-amber-200 font-semibold tracking-wide truncate" style="line-height: 1.75;">
-                    اگر عثمانیوں پر کوہِ غم ٹوٹا تو کیا غم ہے <span class="text-cyber-cyan mx-1">•</span> کہ خونِ صد ہزار انجم سے ہوتی ہے سحر پیدا
+                <p dir="rtl" lang="ur" class="font-urdu text-xs sm:text-sm text-zinc-200 font-medium tracking-wide truncate" style="line-height: 1.75;">
+                    اگر عثمانیوں پر کوہِ غم ٹوٹا تو کیا غم ہے <span class="text-zinc-600 mx-1.5">—</span> کہ خونِ صد ہزار انجم سے ہوتی ہے سحر پیدا
                 </p>
             </div>
             <!-- Right: Translation + Quick Jump to Poetry Slide -->
             <div class="flex items-center gap-3 text-[11px] font-mono shrink-0 ml-auto">
-                <span class="text-slate-400 italic hidden 2xl:inline whitespace-nowrap">
-                    "If a mountain of grief falls upon the Ottomans, why lament? For the dawn is born from the lifeblood of a hundred thousand stars."
+                <span class="text-zinc-500 italic hidden 2xl:inline whitespace-nowrap">
+                    "For the dawn is born from the lifeblood of a hundred thousand stars."
                 </span>
-                <button onclick="openPersonalVaultTab('poetry')" class="px-2.5 py-1 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 transition flex items-center gap-1.5 shrink-0 whitespace-nowrap">
-                    <i class="fa-solid fa-scroll text-amber-400"></i>
-                    <span>✒️ Iqbal &amp; Mehmed II Verse</span>
+                <button onclick="openPersonalVaultTab('poetry')" class="px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+                    <i class="fa-solid fa-feather-pointed text-zinc-400 text-[10px]"></i>
+                    <span>Classical Verse</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Sticky System Navigation Bar (Fixed Alignment, Scrollable Center Nav, Zero Right-Edge Clipping) -->
+    <!-- Sticky System Navigation Bar (Minimalist Architectural Header) -->
     <header class="sticky top-0 z-40 glass-nav w-full overflow-hidden">
-        <div class="max-w-[1440px] w-full mx-auto px-3 sm:px-5 min-h-[64px] py-2 flex items-center justify-between gap-2.5">
-            <!-- Brand Identity (Locked shrink-0 so it never crushes in Chrome) -->
-            <button onclick="goToSlide(0)" class="flex items-center gap-2.5 group focus:outline-none text-left shrink-0">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-cyber-cyan/20 to-cyber-indigo/30 border border-cyber-cyan/40 flex items-center justify-center font-mono font-bold text-cyber-cyan group-hover:scale-105 transition-transform shrink-0">
-                    SP<span class="text-xs text-cyber-indigo animate-pulse">_</span>
+        <div class="max-w-[1360px] w-full mx-auto px-4 sm:px-6 min-h-[64px] py-2.5 flex items-center justify-between gap-3">
+            <!-- Brand Identity -->
+            <button onclick="goToSlide(0)" class="flex items-center gap-3 group focus:outline-none text-left shrink-0">
+                <div class="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.1] flex items-center justify-center font-mono font-semibold text-xs text-white group-hover:bg-white/[0.1] transition-all shrink-0">
+                    SP
                 </div>
                 <div class="leading-tight">
-                    <div class="flex items-center gap-1.5 whitespace-nowrap">
-                        <span class="font-display font-bold text-sm sm:text-base text-white tracking-tight">SHAHZAIB PARVAIZ</span>
-                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping mr-1"></span>SWE INTERN
+                    <div class="flex items-center gap-2 whitespace-nowrap">
+                        <span class="font-display font-semibold text-sm sm:text-[15px] text-white tracking-tight">Shahzaib Parvaiz</span>
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5"></span>Intern @ TransporTech
                         </span>
                     </div>
-                    <p class="text-[10px] sm:text-[11px] font-mono text-slate-400 whitespace-nowrap mt-0.5">Full-Stack (Backend / Spring) • UoK CSE '28</p>
+                    <p class="text-[11px] font-mono text-zinc-500 whitespace-nowrap mt-0.5">Backend &amp; Full-Stack • UoK CSE '28</p>
                 </div>
             </button>
 
-            <!-- Center Slide Deck Navigation Tabs (Horizontally Scrollable Strip so Right Buttons Never Clip) -->
-            <nav id="top-slide-nav" class="hidden md:flex items-center gap-1 bg-slate-950/85 p-1 rounded-xl border border-slate-800/90 text-[11px] font-mono min-w-0 flex-1 max-w-2xl overflow-x-auto nav-scroll">
-                <button onclick="goToSlide(0)" id="nav-slide-0" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 transition bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/40 font-semibold">00.HOME</button>
-                <button onclick="goToSlide(1)" id="nav-slide-1" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-slate-300 hover:text-cyber-cyan transition">01.INTERNSHIP</button>
-                <button onclick="goToSlide(2)" id="nav-slide-2" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-slate-300 hover:text-cyber-cyan transition">02.STACK</button>
-                <button onclick="goToSlide(3)" id="nav-slide-3" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-emerald-400 hover:text-cyber-cyan transition font-semibold">03.SNAKE_AI</button>
-                <button onclick="goToSlide(4)" id="nav-slide-4" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-slate-300 hover:text-cyber-cyan transition">04.PROJECTS</button>
-                <button onclick="goToSlide(5)" id="nav-slide-5" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-slate-300 hover:text-cyber-cyan transition">05.ACADEMICS</button>
-                <button onclick="goToSlide(6)" id="nav-slide-6" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-amber-300 hover:text-amber-200 transition font-semibold">06.BEYOND_CODE</button>
-                <button onclick="goToSlide(7)" id="nav-slide-7" class="slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-slate-300 hover:text-cyber-cyan transition">07.CONTACT</button>
+            <!-- Center Slide Deck Navigation Tabs -->
+            <nav id="top-slide-nav" class="hidden md:flex items-center gap-1 bg-zinc-900/70 p-1 rounded-lg border border-white/[0.06] text-[11px] font-mono min-w-0 flex-1 max-w-2xl overflow-x-auto nav-scroll">
+                <button onclick="goToSlide(0)" id="nav-slide-0" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 transition bg-white/10 text-white font-medium">00.Home</button>
+                <button onclick="goToSlide(1)" id="nav-slide-1" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition">01.Experience</button>
+                <button onclick="goToSlide(2)" id="nav-slide-2" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition">02.Stack</button>
+                <button onclick="goToSlide(3)" id="nav-slide-3" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-300 hover:text-white transition">03.Snake_AI</button>
+                <button onclick="goToSlide(4)" id="nav-slide-4" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition">04.Projects</button>
+                <button onclick="goToSlide(5)" id="nav-slide-5" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition">05.Academics</button>
+                <button onclick="goToSlide(6)" id="nav-slide-6" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition">06.Beyond_Code</button>
+                <button onclick="goToSlide(7)" id="nav-slide-7" class="slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition">07.Contact</button>
             </nav>
 
-            <!-- Right Action Buttons (Always 100% Visible Inside Viewport) -->
-            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                <button onclick="openDevLogModal('snake')" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-cyber-cyan/20 to-cyber-indigo/25 hover:from-cyber-cyan/30 hover:to-cyber-indigo/35 border border-cyber-cyan/50 text-xs font-mono text-cyber-cyan font-semibold transition shadow-sm whitespace-nowrap">
-                    <i class="fa-solid fa-code-branch text-cyber-cyan"></i>
+            <!-- Right Action Buttons -->
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="openDevLogModal('snake')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] border border-white/[0.1] text-xs font-mono text-white font-medium transition whitespace-nowrap">
+                    <i class="fa-solid fa-code-branch text-zinc-400 text-[11px]"></i>
                     <span>DevLog</span>
-                    <span id="nav-total-commits" class="px-1.5 py-0.2 text-[10px] rounded-full bg-cyber-cyan/20 text-white">26</span>
+                    <span id="nav-total-commits" class="px-1.5 py-0.2 text-[10px] rounded bg-white/10 text-zinc-200">26</span>
                 </button>
-                <button onclick="goToSlide(7)" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-xs font-mono text-emerald-300 transition whitespace-nowrap">
-                    <i class="fa-solid fa-paper-plane text-emerald-400"></i>
+                <button onclick="goToSlide(7)" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-xs font-mono text-zinc-300 transition whitespace-nowrap">
                     <span>Contact</span>
                 </button>
-                <button onclick="openTerminalModal()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-900/95 hover:bg-slate-800 border border-cyber-cyan/40 hover:border-cyber-cyan text-xs font-mono text-white transition shadow-inner group whitespace-nowrap">
-                    <i class="fa-solid fa-terminal text-cyber-cyan group-hover:translate-x-0.5 transition-transform"></i>
+                <button onclick="openTerminalModal()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-white/[0.08] text-xs font-mono text-zinc-300 hover:text-white transition whitespace-nowrap">
+                    <i class="fa-solid fa-terminal text-zinc-400 text-[11px]"></i>
                     <span>CLI</span>
-                    <kbd class="hidden lg:inline-block px-1.5 py-0.5 text-[10px] bg-slate-800 text-cyber-cyan rounded border border-slate-700">⌘K</kbd>
+                    <kbd class="hidden lg:inline-block px-1.5 py-0.5 text-[10px] bg-zinc-950 text-zinc-400 rounded border border-white/[0.06]">⌘K</kbd>
                 </button>
             </div>
         </div>
 
-        <!-- Slide Deck Top Progress Bar -->
-        <div class="w-full h-0.5 bg-slate-900/90 overflow-hidden">
-            <div id="slide-progress-bar" class="h-full bg-gradient-to-r from-cyber-cyan via-cyber-indigo to-emerald-400 transition-all duration-300" style="width: 12.5%"></div>
+        <!-- Minimalist Progress Hairline -->
+        <div class="w-full h-[1px] bg-white/[0.04] overflow-hidden">
+            <div id="slide-progress-bar" class="h-full bg-white/60 transition-all duration-500 ease-out" style="width: 12.5%"></div>
         </div>
     </header>
 
     <!-- Main Multi-Slide Stage Wrapper -->
-    <main id="top" class="relative z-10 flex-1 max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-28 flex flex-col justify-center">
+    <main id="top" class="relative z-10 flex-1 max-w-[1360px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32 flex flex-col justify-center">
 
         <!-- =========================================================================
-             SLIDE 00: HOME — PORTFOLIO LENS + HERO PITCH + CYBER-REACTOR PORTRAIT
+             SLIDE 00: HOME — PORTFOLIO LENS + HERO PITCH + STUDIO PORTRAIT
              ========================================================================= -->
-        <div id="slide-0" class="slide-panel active-slide space-y-6">
+        <div id="slide-0" class="slide-panel active-slide space-y-8">
 
-            <!-- RBAC Perspective / Role Switcher Bar (Single-Line Aligned) -->
+            <!-- Minimalist Perspective Switcher Bar -->
             <section aria-label="Perspective Switcher">
-                <div class="glass-card rounded-2xl px-4 py-3 border border-slate-800/90">
+                <div class="glass-card rounded-xl px-4 py-2.5">
                     <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3">
                         <div class="flex items-center gap-3 min-w-0">
-                            <span class="px-2.5 py-1 rounded-md bg-cyber-indigo/20 border border-cyber-indigo/40 font-mono text-[11px] text-cyber-cyan uppercase tracking-wider shrink-0 whitespace-nowrap">
-                                <i class="fa-solid fa-sliders mr-1.5"></i>Portfolio Lens
+                            <span class="px-2 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] font-mono text-[10px] text-zinc-400 uppercase tracking-wider shrink-0 whitespace-nowrap">
+                                Perspective
                             </span>
-                            <p id="rbac-banner-text" class="text-xs sm:text-sm text-slate-300 font-mono truncate">
-                                Active Lens: <strong class="text-cyber-cyan">Backend Developer View</strong> — Highlighting Java, Spring Boot/MVC, REST APIs, SQL Schemas &amp; Daily DevLog Commits.
+                            <p id="rbac-banner-text" class="text-xs sm:text-sm text-zinc-400 font-sans truncate">
+                                Active Lens: <strong class="text-white font-medium">Backend Developer View</strong> — Highlighting Java, Spring Boot/MVC, REST APIs, SQL Schemas &amp; Engineering DevLogs.
                             </p>
                         </div>
-                        <!-- Segmented Controls (Single-Line Whitespace-Nowrap) -->
-                        <div class="flex flex-wrap sm:flex-nowrap items-center gap-1.5 bg-slate-950/90 p-1 rounded-xl border border-slate-800 shrink-0">
-                            <button onclick="setRbacMode('backend')" id="rbac-btn-backend" class="rbac-tab px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap bg-gradient-to-r from-cyber-cyan/20 to-cyber-indigo/20 text-cyber-cyan border border-cyber-cyan/40">
-                                <i class="fa-solid fa-server"></i> Backend Developer
+                        <!-- Segmented Controls -->
+                        <div class="flex flex-wrap sm:flex-nowrap items-center gap-1 bg-zinc-950/90 p-1 rounded-lg border border-white/[0.06] shrink-0">
+                            <button onclick="setRbacMode('backend')" id="rbac-btn-backend" class="rbac-tab px-3 py-1.5 rounded-md text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap bg-white/10 text-white border border-white/15">
+                                <i class="fa-solid fa-server text-[10px]"></i> Backend View
                             </button>
-                            <button onclick="setRbacMode('recruiter')" id="rbac-btn-recruiter" class="rbac-tab px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white">
-                                <i class="fa-solid fa-briefcase"></i> Recruiter View
+                            <button onclick="setRbacMode('recruiter')" id="rbac-btn-recruiter" class="rbac-tab px-3 py-1.5 rounded-md text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap text-zinc-400 hover:text-white">
+                                <i class="fa-solid fa-briefcase text-[10px]"></i> Recruiter View
                             </button>
-                            <button onclick="setRbacMode('playground')" id="rbac-btn-playground" class="rbac-tab px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white">
-                                <i class="fa-solid fa-flask"></i> Interactive Lab
+                            <button onclick="setRbacMode('playground')" id="rbac-btn-playground" class="rbac-tab px-3 py-1.5 rounded-md text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap text-zinc-400 hover:text-white">
+                                <i class="fa-solid fa-flask text-[10px]"></i> Interactive Lab
                             </button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- HERO SECTION: Kinetic Typography + Cyber-Holographic Portrait & Telemetry Card -->
-            <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- HERO SECTION: Clean Editorial Typography + Studio Portrait Card -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <!-- Left Column: Hero Pitch (7 cols) -->
-                <div class="lg:col-span-7 space-y-5">
+                <div class="lg:col-span-7 space-y-6">
                     <!-- Live Status Pill -->
-                    <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-xs font-mono text-emerald-400 shadow-lg">
+                    <div class="inline-flex flex-wrap items-center gap-2.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-zinc-300">
                         <span class="relative flex h-2 w-2">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                         </span>
-                        <span>SWE INTERN @ TRANSPORTECH (JAN 2026 – PRESENT) // SRINAGAR, JK</span>
+                        <span>Software Engineering Intern @ TransporTech • Srinagar</span>
                     </div>
 
                     <!-- Main Headline -->
-                    <div class="space-y-2.5">
-                        <p class="font-mono text-xs sm:text-sm uppercase tracking-widest text-cyber-cyan">
-                            &lt;FullStackDeveloper primary="Backend &amp; Spring Boot" /&gt;
+                    <div class="space-y-3">
+                        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500">
+                            Full-Stack Developer — Primary Focus: Backend &amp; Spring Boot
                         </p>
-                        <h1 class="font-display text-4xl sm:text-5xl xl:text-[54px] font-extrabold tracking-tight text-white leading-[1.08]">
-                            Building Clean <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-indigo-400 to-cyber-indigo text-glow-cyan">Backend Services</span> &amp; Full-Stack Web Apps.
+                        <h1 class="font-display text-4xl sm:text-5xl xl:text-[54px] font-bold tracking-tight text-white leading-[1.08]">
+                            Engineering resilient <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">backend systems</span> &amp; full-stack web apps.
                         </h1>
-                        <div class="h-7 flex items-center font-mono text-sm sm:text-base text-slate-300">
-                            <span class="text-cyber-indigo mr-2">$&gt;</span>
-                            <span id="typewriter-text" class="text-cyber-cyan font-semibold"></span>
-                            <span class="w-2 h-5 bg-cyber-cyan ml-1 animate-pulse"></span>
+                        <div class="h-7 flex items-center font-mono text-xs sm:text-sm text-zinc-400">
+                            <span class="text-zinc-600 mr-2">~/shahzaib $</span>
+                            <span id="typewriter-text" class="text-zinc-200 font-medium"></span>
+                            <span class="w-1.5 h-4 bg-zinc-400 ml-1 animate-pulse"></span>
                         </div>
                     </div>
 
                     <!-- Executive Summary -->
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                        Hey, I'm <strong class="text-white">Shahzaib Parvaiz</strong> — a <strong class="text-cyber-cyan">Full-Stack Developer (primarily focused on Backend with Java, Spring MVC, Spring Boot, and SQL)</strong> alongside <strong class="text-white">Vue.js</strong> and <strong class="text-white">C</strong>. As a <strong class="text-white">Software Engineering Intern at TransporTech</strong>, I'm learning and contributing every day—building the greenfield <span class="font-mono text-xs text-amber-300">TransporTech Marketplace (LLD, DB Schema, REST APIs, Terraform)</span> from ground zero and shipping Vue components &amp; bug fixes on <span class="font-mono text-xs text-cyber-cyan">DriverUp TMS</span>.
+                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        I'm <strong class="text-white font-medium">Shahzaib Parvaiz</strong> — a <strong class="text-zinc-200 font-medium">Full-Stack Developer specializing in Backend development with Java, Spring MVC, Spring Boot, and SQL</strong> alongside <strong class="text-zinc-200 font-medium">Vue.js</strong> and <strong class="text-zinc-200 font-medium">C</strong>. As a <strong class="text-zinc-200 font-medium">Software Engineering Intern at TransporTech</strong>, I contribute to the greenfield <span class="font-mono text-xs text-zinc-300">TransporTech Marketplace (LLD, DB Schema, REST APIs, Terraform)</span> and build Vue components &amp; bug fixes on <span class="font-mono text-xs text-zinc-300">DriverUp TMS</span>.
                     </p>
 
-                    <!-- Quick Metric Pills (Click to jump to corresponding slides) -->
+                    <!-- Quick Metric Pills -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
-                        <div onclick="goToSlide(2)" class="glass-card rounded-xl p-3 border-l-2 border-l-cyber-cyan cursor-pointer hover:border-cyber-cyan transition">
-                            <div class="font-mono text-lg sm:text-xl font-bold text-white">Spring</div>
-                            <div class="text-[11px] font-mono text-slate-400">Boot • MVC • REST API</div>
+                        <div onclick="goToSlide(2)" class="glass-card rounded-xl p-3.5 cursor-pointer group">
+                            <div class="font-display text-lg sm:text-xl font-bold text-white group-hover:translate-x-0.5 transition-transform">Spring</div>
+                            <div class="text-[11px] font-mono text-zinc-500 mt-0.5">Boot • MVC • REST</div>
                         </div>
-                        <div onclick="goToSlide(1)" class="glass-card rounded-xl p-3 border-l-2 border-l-amber-400 cursor-pointer hover:border-amber-400 transition">
-                            <div class="font-mono text-lg sm:text-xl font-bold text-white">0 → 1</div>
-                            <div class="text-[11px] font-mono text-slate-400">Marketplace Build (NDA)</div>
+                        <div onclick="goToSlide(1)" class="glass-card rounded-xl p-3.5 cursor-pointer group">
+                            <div class="font-display text-lg sm:text-xl font-bold text-white group-hover:translate-x-0.5 transition-transform">0 → 1</div>
+                            <div class="text-[11px] font-mono text-zinc-500 mt-0.5">Marketplace (NDA)</div>
                         </div>
-                        <div onclick="goToSlide(5)" class="glass-card rounded-xl p-3 border-l-2 border-l-emerald-400 cursor-pointer hover:border-emerald-400 transition">
-                            <div class="font-mono text-lg sm:text-xl font-bold text-white">8.95 ▲</div>
-                            <div class="text-[11px] font-mono text-slate-400">Latest Sem SGPA (UoK)</div>
+                        <div onclick="goToSlide(5)" class="glass-card rounded-xl p-3.5 cursor-pointer group">
+                            <div class="font-display text-lg sm:text-xl font-bold text-white group-hover:translate-x-0.5 transition-transform">8.95 <span class="text-emerald-400 text-xs">▲</span></div>
+                            <div class="text-[11px] font-mono text-zinc-500 mt-0.5">Latest SGPA (UoK)</div>
                         </div>
-                        <div onclick="openDevLogModal('snake')" class="glass-card rounded-xl p-3 border-l-2 border-l-cyber-indigo cursor-pointer hover:border-cyber-cyan transition">
-                            <div class="font-mono text-lg sm:text-xl font-bold text-cyber-cyan flex items-center gap-1.5">
-                                <i class="fa-solid fa-code-branch text-sm"></i><span id="hero-commit-count">26</span>
+                        <div onclick="openDevLogModal('snake')" class="glass-card rounded-xl p-3.5 cursor-pointer group">
+                            <div class="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
+                                <span id="hero-commit-count">26</span>
+                                <span class="text-xs font-mono font-normal text-zinc-400">logs</span>
                             </div>
-                            <div class="text-[11px] font-mono text-slate-300 underline decoration-cyber-cyan/50">Open Git-Graph DevLog</div>
+                            <div class="text-[11px] font-mono text-zinc-400 mt-0.5 underline decoration-white/20">Git-Graph DevLog →</div>
                         </div>
                     </div>
 
-                    <!-- Hero CTA & Slide Exploration Bar -->
+                    <!-- Hero CTA Bar -->
                     <div class="flex flex-wrap items-center gap-2.5 pt-1">
-                        <button type="button" onclick="goToSlide(1)" class="px-5 py-2.5 rounded-xl font-display font-bold text-xs sm:text-sm bg-gradient-to-r from-cyber-cyan to-cyber-indigo text-slate-950 hover:opacity-95 transition shadow-lg shadow-cyber-cyan/20 flex items-center gap-2">
-                            <span>Explore Slide Deck</span>
-                            <i class="fa-solid fa-arrow-right"></i>
+                        <button type="button" onclick="goToSlide(1)" class="px-5 py-2.5 rounded-lg font-sans font-medium text-xs sm:text-sm bg-white text-zinc-950 hover:bg-zinc-200 transition flex items-center gap-2 shadow-sm">
+                            <span>Explore Work</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
-                        <button type="button" onclick="openDevLogModal('snake')" class="px-4 py-2.5 rounded-xl font-mono text-xs bg-slate-900/90 hover:bg-slate-800 text-cyber-cyan border border-cyber-cyan/40 transition flex items-center gap-2">
-                            <i class="fa-solid fa-code-branch"></i>
-                            <span>Git-Graph DevLogs</span>
+                        <button type="button" onclick="openDevLogModal('snake')" class="px-4 py-2.5 rounded-lg font-mono text-xs bg-white/[0.04] hover:bg-white/[0.08] text-zinc-200 border border-white/[0.08] transition flex items-center gap-2">
+                            <i class="fa-solid fa-code-branch text-zinc-400"></i>
+                            <span>Engineering DevLogs</span>
                         </button>
-                        <button type="button" onclick="openPersonalVaultTab('biscoe', true)" class="px-4 py-2.5 rounded-xl font-mono text-xs bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 transition flex items-center gap-2">
-                            <i class="fa-solid fa-mountain-sun text-amber-400"></i>
+                        <button type="button" onclick="openPersonalVaultTab('biscoe', true)" class="px-4 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-2">
                             <span>Biscoe Honors &amp; Verse</span>
                         </button>
-                        <a href="https://github.com/ShahzaibParvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl font-mono text-xs bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 hover:border-cyber-cyan/50 transition flex items-center gap-1.5">
-                            <i class="fa-brands fa-github text-cyber-cyan text-sm"></i>
+                        <a href="https://github.com/ShahzaibParvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5">
+                            <i class="fa-brands fa-github text-sm"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/shahzaib-parvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl font-mono text-xs bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 hover:border-[#0A66C2] transition flex items-center gap-1.5">
-                            <i class="fa-brands fa-linkedin text-[#0A66C2] text-sm"></i>
+                        <a href="https://www.linkedin.com/in/shahzaib-parvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5">
+                            <i class="fa-brands fa-linkedin text-sm"></i>
                             <span>LinkedIn</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Column: QUANTUM CYBER-REACTOR PORTRAIT STAGE & TELEMETRY HUD (5 cols) -->
+                <!-- Right Column: MINIMALIST ARCHITECTURAL PORTRAIT STAGE & TELEMETRY CARD (5 cols) -->
                 <div class="lg:col-span-5">
-                    <div id="hero-tilt-card" class="tilt-card glass-card rounded-3xl p-5 border border-cyber-cyan/40 relative overflow-hidden">
-                        <!-- Ambient Crimson/Cyan Dual Glow behind Portrait -->
-                        <div id="portrait-ambient-glow" class="absolute -top-16 left-1/2 -translate-x-1/2 w-72 h-72 bg-gradient-to-tr from-rose-600/25 via-cyber-cyan/20 to-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                    <div id="hero-tilt-card" class="tilt-card glass-card rounded-2xl p-6 relative overflow-hidden">
+                        <!-- Subtle Ambient Studio Backlight -->
+                        <div id="portrait-ambient-glow" class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-white/[0.04] rounded-full blur-3xl pointer-events-none"></div>
 
-                        <!-- Top Bar (Single-Line Aligned) -->
-                        <div class="relative z-10 flex items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800">
-                            <div class="flex items-center gap-1.5 min-w-0">
-                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80 shrink-0"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80 shrink-0"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80 shrink-0"></span>
-                                <span class="ml-1 font-mono text-[11px] text-slate-400 truncate">biometric://shahzaib-parvaiz</span>
+                        <!-- Top Card Header -->
+                        <div class="relative z-10 flex items-center justify-between gap-2 pb-4 mb-4 border-b border-white/[0.06]">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                <span class="font-mono text-[11px] text-zinc-400 truncate">shahzaib.profile</span>
                             </div>
-                            <div class="flex bg-slate-950 p-0.5 rounded-lg border border-slate-800 text-[11px] font-mono shrink-0">
-                                <button onclick="switchHeroTab('portrait')" id="tab-portrait-btn" class="px-2.5 py-1 rounded-md bg-cyber-cyan/20 text-cyber-cyan font-semibold whitespace-nowrap">Reactor HUD</button>
-                                <button onclick="switchHeroTab('json')" id="tab-json-btn" class="px-2.5 py-1 rounded-md text-slate-400 hover:text-white whitespace-nowrap">Developer.json</button>
+                            <div class="flex bg-zinc-950 p-0.5 rounded-lg border border-white/[0.06] text-[11px] font-mono shrink-0">
+                                <button onclick="switchHeroTab('portrait')" id="tab-portrait-btn" class="px-2.5 py-1 rounded-md bg-white/10 text-white font-medium whitespace-nowrap">Portrait</button>
+                                <button onclick="switchHeroTab('json')" id="tab-json-btn" class="px-2.5 py-1 rounded-md text-zinc-500 hover:text-zinc-200 whitespace-nowrap">profile.json</button>
                             </div>
                         </div>
 
-                        <!-- TAB 1: CRAZY QUANTUM CYBER-REACTOR PORTRAIT STAGE -->
-                        <div id="hero-portrait-panel" class="relative z-10 space-y-3">
+                        <!-- TAB 1: STUDIO PORTRAIT STAGE -->
+                        <div id="hero-portrait-panel" class="relative z-10 space-y-4">
 
-                            <!-- Centerpiece Orbital Reactor Stage -->
-                            <div class="portrait-stage-group relative w-60 h-60 sm:w-64 sm:h-64 mx-auto flex items-center justify-center select-none"
+                            <!-- Centerpiece Architectural Portrait Stage -->
+                            <div class="portrait-stage-group relative w-56 h-56 sm:w-60 sm:h-60 mx-auto flex items-center justify-center select-none"
                                  onmouseenter="setReactorHover(true)"
                                  onmouseleave="setReactorHover(false)">
 
-                                <!-- Layer 1: Live 60FPS Particle Vortex & Rising Sparks Canvas -->
-                                <canvas id="avatar-reactor-canvas" width="300" height="300" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+                                <!-- Layer 1: Subtle 60FPS Ambient Particle Canvas -->
+                                <canvas id="avatar-reactor-canvas" width="300" height="300" class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-45"></canvas>
 
-                                <!-- Layer 2: Triple Counter-Rotating SVG Gyroscope & Telemetry HUD Rings -->
+                                <!-- Layer 2: Ultra-Fine Architectural SVG Orbit Lines -->
                                 <svg id="avatar-hud-rings" viewBox="0 0 280 280" class="absolute inset-0 w-full h-full pointer-events-none z-10">
-                                    <defs>
-                                        <linearGradient id="ringGradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.9"/>
-                                            <stop offset="50%" stop-color="#6366f1" stop-opacity="0.4"/>
-                                            <stop offset="100%" stop-color="#10b981" stop-opacity="0.9"/>
-                                        </linearGradient>
-                                        <linearGradient id="ringGradCrimson" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.95"/>
-                                            <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.8"/>
-                                            <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.85"/>
-                                        </linearGradient>
-                                    </defs>
-
-                                    <!-- Outer Compass Telemetry Ring (Clockwise) -->
                                     <g class="ring-cw">
-                                        <circle cx="140" cy="140" r="132" fill="none" stroke="url(#ringGradCyan)" stroke-width="1.5" stroke-dasharray="14 8 4 8" />
-                                        <circle cx="140" cy="8" r="3.5" fill="#00f2fe" />
-                                        <circle cx="140" cy="272" r="3.5" fill="#10b981" />
-                                        <circle cx="8" cy="140" r="3.5" fill="#f59e0b" />
-                                        <circle cx="272" cy="140" r="3.5" fill="#f43f5e" />
+                                        <circle cx="140" cy="140" r="128" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="6 10" />
                                     </g>
-
-                                    <!-- Middle Segmented Radar Arc (Counter-Clockwise) -->
                                     <g class="ring-ccw">
-                                        <circle cx="140" cy="140" r="118" fill="none" stroke="url(#ringGradCrimson)" stroke-width="2.2" stroke-dasharray="48 24 12 24" />
-                                        <path d="M 140 16 A 124 124 0 0 1 252 88" fill="none" stroke="#00f2fe" stroke-width="2.5" stroke-linecap="round" />
-                                        <path d="M 140 264 A 124 124 0 0 1 28 192" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+                                        <circle cx="140" cy="140" r="112" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
                                     </g>
-
-                                    <!-- Inner High-Speed Octagonal Energy Track -->
                                     <g class="ring-cw-fast">
-                                        <circle cx="140" cy="140" r="105" fill="none" stroke="rgba(244, 63, 94, 0.45)" stroke-width="1.2" stroke-dasharray="6 14" />
+                                        <circle cx="140" cy="140" r="98" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="2 8" />
                                     </g>
                                 </svg>
 
-                                <!-- Layer 3: Perfectly Aligned Floating Orbital Telemetry Badges -->
-                                <div class="float-node-1 absolute top-2 -left-3 z-30 px-2 py-0.5 rounded-md bg-slate-950/95 border border-cyber-cyan/60 font-mono text-[10px] text-cyber-cyan shadow-lg flex items-center gap-1 whitespace-nowrap">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-cyber-cyan animate-ping"></span>SPRING BOOT
+                                <!-- Layer 3: Minimalist Floating Stack Tags -->
+                                <div class="float-node-1 absolute top-2 -left-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Spring Boot
                                 </div>
-                                <div class="float-node-2 absolute top-2 -right-3 z-30 px-2 py-0.5 rounded-md bg-slate-950/95 border border-amber-500/60 font-mono text-[10px] text-amber-300 shadow-lg flex items-center gap-1 whitespace-nowrap">
-                                    <i class="fa-solid fa-database text-[9px]"></i>JAVA • SQL
+                                <div class="float-node-2 absolute top-2 -right-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                    Java • SQL
                                 </div>
-                                <div class="float-node-3 absolute bottom-2 -left-3 z-30 px-2 py-0.5 rounded-md bg-slate-950/95 border border-emerald-500/60 font-mono text-[10px] text-emerald-400 shadow-lg flex items-center gap-1 whitespace-nowrap">
-                                    <i class="fa-solid fa-microchip text-[9px]"></i>C • SDL2
+                                <div class="float-node-3 absolute bottom-2 -left-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                    C • SDL2
                                 </div>
-                                <div class="float-node-4 absolute bottom-2 -right-3 z-30 px-2 py-0.5 rounded-md bg-slate-950/95 border border-rose-500/60 font-mono text-[10px] text-rose-300 shadow-lg flex items-center gap-1 whitespace-nowrap">
-                                    <i class="fa-brands fa-vuejs text-[9px]"></i>VUE • REST
+                                <div class="float-node-4 absolute bottom-2 -right-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                    Vue • REST
                                 </div>
 
-                                <!-- Layer 4: Core Portrait Frame -->
-                                <div id="portrait-core-frame" class="relative z-20 w-40 h-40 sm:w-44 sm:h-44 rounded-full p-1 holo-ring shadow-[0_0_45px_rgba(0,242,254,0.32)] transition-transform duration-500 group-hover:scale-105">
-                                    <div class="w-full h-full rounded-full overflow-hidden bg-slate-950 relative">
-                                        <!-- Sweeping Biometric Laser Bar -->
+                                <!-- Layer 4: Core Studio Portrait Frame -->
+                                <div id="portrait-core-frame" class="relative z-20 w-40 h-40 sm:w-44 sm:h-44 rounded-full p-[1.5px] holo-ring shadow-2xl transition-transform duration-500 group-hover:scale-[1.03]">
+                                    <div class="w-full h-full rounded-full overflow-hidden bg-zinc-950 relative">
                                         <div id="avatar-laser-bar" class="laser-scan-bar"></div>
-
-                                        <!-- Primary Portrait Image -->
                                         <img id="developer-avatar"
                                              src="IMAGE 2026-10-15 01:47:38.jpg"
                                              onerror="handleAvatarFallback(this)"
                                              alt="Shahzaib Parvaiz"
-                                             class="w-full h-full object-cover object-top holo-glitch-active portrait-img-quantum transition-all duration-500">
-
-                                        <!-- Studio-to-Dark Radial Rim-Light Vignette Overlay -->
+                                             class="w-full h-full object-cover object-top portrait-img-quantum transition-all duration-500">
                                         <div class="absolute inset-0 rounded-full studio-dark-blend pointer-events-none"></div>
-                                        <!-- Subtle CRT Scanline Mesh -->
-                                        <div class="absolute inset-0 scanlines opacity-20 pointer-events-none"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Interactive Portrait Animation Mode Switcher (4 Live Presets) -->
-                            <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800 space-y-1.5">
-                                <div class="flex items-center justify-between px-1 text-[10px] font-mono text-slate-400">
-                                    <span><i class="fa-solid fa-wand-magic-sparkles text-cyber-cyan mr-1"></i>PORTRAIT FX ENGINE:</span>
-                                    <span class="text-emerald-400 flex items-center gap-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>60FPS_ACTIVE
-                                    </span>
+                            <!-- Subtle Portrait Lighting Switcher -->
+                            <div class="bg-zinc-950/80 p-2 rounded-xl border border-white/[0.06] space-y-1.5">
+                                <div class="flex items-center justify-between px-1 text-[10px] font-mono text-zinc-500">
+                                    <span>Lighting Preset</span>
+                                    <span class="text-zinc-400">Interactive 3D Tilt</span>
                                 </div>
-                                <div class="grid grid-cols-4 gap-1.5 font-mono text-[10px]">
-                                    <button onclick="setAvatarFxMode('quantum')" id="fx-btn-quantum" class="px-2 py-1.5 rounded-lg bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/50 font-semibold transition truncate">
-                                        ⚡ Quantum
+                                <div class="grid grid-cols-4 gap-1 font-mono text-[10px]">
+                                    <button onclick="setAvatarFxMode('quantum')" id="fx-btn-quantum" class="px-2 py-1.5 rounded-md bg-white/10 text-white border border-white/15 font-medium transition truncate">
+                                        Balanced
                                     </button>
-                                    <button onclick="setAvatarFxMode('crimson')" id="fx-btn-crimson" class="px-2 py-1.5 rounded-lg bg-slate-900 text-slate-400 hover:text-rose-300 border border-slate-800 transition truncate">
-                                        👑 Crimson
+                                    <button onclick="setAvatarFxMode('crimson')" id="fx-btn-crimson" class="px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate">
+                                        Warm
                                     </button>
-                                    <button onclick="setAvatarFxMode('matrix')" id="fx-btn-matrix" class="px-2 py-1.5 rounded-lg bg-slate-900 text-slate-400 hover:text-emerald-300 border border-slate-800 transition truncate">
-                                        🟢 Matrix
+                                    <button onclick="setAvatarFxMode('matrix')" id="fx-btn-matrix" class="px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate">
+                                        Monochrome
                                     </button>
-                                    <button onclick="setAvatarFxMode('studio')" id="fx-btn-studio" class="px-2 py-1.5 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition truncate">
-                                        ✨ Studio 3D
+                                    <button onclick="setAvatarFxMode('studio')" id="fx-btn-studio" class="px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate">
+                                        Minimal
                                     </button>
                                 </div>
                             </div>
 
                             <!-- Identity Bio Metadata Strip -->
-                            <div class="bg-slate-950/85 rounded-xl p-3 border border-slate-800/90 space-y-1.5">
+                            <div class="bg-zinc-950/80 rounded-xl p-3.5 border border-white/[0.06] space-y-1.5">
                                 <div class="flex items-center justify-between gap-2">
                                     <div>
-                                        <h2 class="font-display text-base font-bold text-white leading-tight">Shahzaib Parvaiz</h2>
-                                        <p class="font-mono text-[11px] text-cyber-cyan">Full-Stack Developer • Primarily Backend (Spring)</p>
+                                        <h2 class="font-display text-sm font-semibold text-white">Shahzaib Parvaiz</h2>
+                                        <p class="font-mono text-[11px] text-zinc-400">Full-Stack Developer (Primary: Backend / Spring)</p>
                                     </div>
-                                    <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 font-mono text-[10px] text-emerald-400 whitespace-nowrap">
-                                        SGPA: 8.95 ▲
+                                    <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-mono text-[10px] text-emerald-400 whitespace-nowrap">
+                                        SGPA 8.95 ▲
                                     </span>
                                 </div>
-                                <div id="topology-inspector-readout" class="px-2.5 py-1 rounded bg-slate-900/90 border border-slate-800 font-mono text-[11px] text-slate-300">
-                                    <span class="text-cyber-cyan">HUD:</span> Switch between <strong>⚡ Quantum</strong> &amp; <strong>👑 Crimson</strong> portrait modes above!
+                                <div id="topology-inspector-readout" class="font-mono text-[11px] text-zinc-500 pt-1 border-t border-white/[0.05]">
+                                    Use <kbd class="px-1 py-0.5 text-[10px] bg-zinc-900 text-zinc-300 rounded border border-white/10">←</kbd> <kbd class="px-1 py-0.5 text-[10px] bg-zinc-900 text-zinc-300 rounded border border-white/10">→</kbd> arrow keys or the top bar to navigate slides.
                                 </div>
                             </div>
                         </div>
 
                         <!-- TAB 2: Developer Profile JSON View -->
                         <div id="hero-json-panel" class="hidden relative z-10">
-                            <pre class="bg-slate-950/90 p-3.5 rounded-xl border border-slate-800 font-mono text-[11px] leading-relaxed text-slate-300 overflow-x-auto"><code>{
-  <span class="text-cyber-cyan">"name"</span>: <span class="text-emerald-400">"Shahzaib Parvaiz"</span>,
-  <span class="text-cyber-cyan">"role"</span>: <span class="text-emerald-400">"Full-Stack Developer (Primary: Backend / Spring)"</span>,
-  <span class="text-cyber-cyan">"email"</span>: <span class="text-emerald-400">"shahzaibparvaiz.dev@gmail.com"</span>,
-  <span class="text-cyber-cyan">"internship"</span>: {
-    <span class="text-cyber-cyan">"role"</span>: <span class="text-emerald-400">"Software Engineering Intern @ TransporTech"</span>,
-    <span class="text-cyber-cyan">"tenure"</span>: <span class="text-emerald-400">"Jan 1, 2026 - Present"</span>,
-    <span class="text-cyber-cyan">"projects"</span>: [<span class="text-amber-400">"TransporTech Marketplace (0->1 NDA)"</span>, <span class="text-amber-400">"DriverUp TMS"</span>]
+                            <pre class="bg-zinc-950 p-4 rounded-xl border border-white/[0.06] font-mono text-[11px] leading-relaxed text-zinc-300 overflow-x-auto"><code>{
+  <span class="text-zinc-400">"name"</span>: <span class="text-white">"Shahzaib Parvaiz"</span>,
+  <span class="text-zinc-400">"role"</span>: <span class="text-white">"Full-Stack Developer (Primary: Backend / Spring)"</span>,
+  <span class="text-zinc-400">"email"</span>: <span class="text-white">"shahzaibparvaiz.dev@gmail.com"</span>,
+  <span class="text-zinc-400">"internship"</span>: {
+    <span class="text-zinc-400">"role"</span>: <span class="text-white">"Software Engineering Intern @ TransporTech"</span>,
+    <span class="text-zinc-400">"tenure"</span>: <span class="text-white">"Jan 1, 2026 - Present"</span>,
+    <span class="text-zinc-400">"projects"</span>: [<span class="text-zinc-300">"TransporTech Marketplace (0->1 NDA)"</span>, <span class="text-zinc-300">"DriverUp TMS"</span>]
   },
-  <span class="text-cyber-cyan">"almaMater"</span>: [<span class="text-emerald-400">"Univ. of Kashmir (CSE '28)"</span>, <span class="text-amber-400">"Tyndale-Biscoe School (Best All-Round Boy 2017)"</span>],
-  <span class="text-cyber-cyan">"sgpaTrajectory"</span>: [<span class="text-amber-400">8.55</span>, <span class="text-amber-400">8.75</span>, <span class="text-amber-400">8.95</span>],
-  <span class="text-cyber-cyan">"coreStack"</span>: [<span class="text-emerald-400">"Java"</span>, <span class="text-emerald-400">"Spring MVC"</span>, <span class="text-emerald-400">"Spring Boot"</span>, <span class="text-emerald-400">"SQL"</span>, <span class="text-emerald-400">"C"</span>, <span class="text-emerald-400">"Vue.js"</span>, <span class="text-emerald-400">"Terraform"</span>]
+  <span class="text-zinc-400">"almaMater"</span>: [<span class="text-white">"Univ. of Kashmir (CSE '28)"</span>, <span class="text-zinc-300">"Tyndale-Biscoe School (Best All-Round Boy 2017)"</span>],
+  <span class="text-zinc-400">"sgpaTrajectory"</span>: [<span class="text-emerald-400">8.55</span>, <span class="text-emerald-400">8.75</span>, <span class="text-emerald-400">8.95</span>],
+  <span class="text-zinc-400">"coreStack"</span>: [<span class="text-white">"Java"</span>, <span class="text-white">"Spring MVC"</span>, <span class="text-white">"Spring Boot"</span>, <span class="text-white">"SQL"</span>, <span class="text-white">"C"</span>, <span class="text-white">"Vue.js"</span>, <span class="text-white">"Terraform"</span>]
 }</code></pre>
                         </div>
                     </div>
@@ -1729,11 +1691,11 @@
 
     </main>
 
-    <!-- FLOATING MULTI-SLIDE HUD CONTROLLER DOCK (BOTTOM CENTER) -->
-    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-3xl pointer-events-auto">
-        <div class="glass-card rounded-2xl px-3 sm:px-4 py-2 border border-cyber-cyan/35 bg-slate-950/90 shadow-2xl flex items-center justify-between gap-2">
+    <!-- FLOATING MULTI-SLIDE HUD CONTROLLER DOCK (MINIMALIST PILL DOCK) -->
+    <div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 w-[94%] max-w-2xl pointer-events-auto">
+        <div class="glass-card rounded-full px-3 sm:px-4 py-2 bg-zinc-950/90 shadow-2xl flex items-center justify-between gap-3">
             <!-- Prev Slide Button -->
-            <button type="button" onclick="stepSlide(-1)" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-cyber-cyan border border-slate-700 font-mono text-xs transition flex items-center gap-1.5 shrink-0">
+            <button type="button" onclick="stepSlide(-1)" class="px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.1] text-zinc-300 hover:text-white border border-white/[0.08] font-mono text-xs transition flex items-center gap-1.5 shrink-0">
                 <i class="fa-solid fa-chevron-left text-[10px]"></i>
                 <span class="hidden sm:inline">Prev</span>
             </button>
@@ -1741,27 +1703,27 @@
             <!-- Center Slide Indicator Dots + Active Slide Title -->
             <div class="flex flex-col items-center min-w-0">
                 <div class="flex items-center gap-1.5 mb-1">
-                    <button type="button" onclick="goToSlide(0)" id="dock-dot-0" class="w-6 h-1.5 rounded-full bg-cyber-cyan transition-all" title="00. Home"></button>
-                    <button type="button" onclick="goToSlide(1)" id="dock-dot-1" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="01. Internship"></button>
-                    <button type="button" onclick="goToSlide(2)" id="dock-dot-2" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="02. Tech Stack"></button>
-                    <button type="button" onclick="goToSlide(3)" id="dock-dot-3" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="03. Dijkstra Snake"></button>
-                    <button type="button" onclick="goToSlide(4)" id="dock-dot-4" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="04. Projects"></button>
-                    <button type="button" onclick="goToSlide(5)" id="dock-dot-5" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="05. Academics"></button>
-                    <button type="button" onclick="goToSlide(6)" id="dock-dot-6" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="06. Beyond Code"></button>
-                    <button type="button" onclick="goToSlide(7)" id="dock-dot-7" class="w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all" title="07. Contact"></button>
+                    <button type="button" onclick="goToSlide(0)" id="dock-dot-0" class="w-5 h-1 rounded-full bg-white transition-all" title="00. Home"></button>
+                    <button type="button" onclick="goToSlide(1)" id="dock-dot-1" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="01. Experience"></button>
+                    <button type="button" onclick="goToSlide(2)" id="dock-dot-2" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="02. Stack"></button>
+                    <button type="button" onclick="goToSlide(3)" id="dock-dot-3" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="03. Snake AI"></button>
+                    <button type="button" onclick="goToSlide(4)" id="dock-dot-4" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="04. Projects"></button>
+                    <button type="button" onclick="goToSlide(5)" id="dock-dot-5" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="05. Academics"></button>
+                    <button type="button" onclick="goToSlide(6)" id="dock-dot-6" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="06. Beyond Code"></button>
+                    <button type="button" onclick="goToSlide(7)" id="dock-dot-7" class="w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all" title="07. Contact"></button>
                 </div>
-                <div id="dock-slide-label" class="font-mono text-[10px] sm:text-[11px] text-cyber-cyan truncate">
-                    SLIDE 01 / 08 — 00.HOME // OVERVIEW &amp; BIOMETRIC HUD
+                <div id="dock-slide-label" class="font-mono text-[10px] text-zinc-400 truncate">
+                    01 / 08 — Overview
                 </div>
             </div>
 
             <!-- Right: Next Slide + View Mode Toggle -->
             <div class="flex items-center gap-1.5 shrink-0">
-                <button type="button" onclick="toggleScrollAllMode()" id="layout-mode-btn" class="hidden md:flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 font-mono text-[10px] transition" title="Switch between Multi-Slide Deck and Full Scroll View">
-                    <i class="fa-solid fa-layer-group text-cyber-cyan"></i>
+                <button type="button" onclick="toggleScrollAllMode()" id="layout-mode-btn" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] text-zinc-400 hover:text-white border border-white/[0.06] font-mono text-[10px] transition" title="Switch between Multi-Slide Deck and Full Scroll View">
+                    <i class="fa-solid fa-layer-group text-zinc-400"></i>
                     <span id="layout-mode-label">Deck Mode</span>
                 </button>
-                <button type="button" onclick="stepSlide(1)" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-indigo text-slate-950 font-mono text-xs font-bold hover:opacity-95 transition flex items-center gap-1.5">
+                <button type="button" onclick="stepSlide(1)" class="px-3.5 py-1.5 rounded-full bg-white text-zinc-950 font-mono text-xs font-semibold hover:bg-zinc-200 transition flex items-center gap-1.5">
                     <span class="hidden sm:inline">Next</span>
                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
                 </button>
@@ -1996,796 +1958,12 @@
 
     <script>
         /* =========================================================================
-           1. GIT-GRAPH DEVLOG CATALOG & PRE-SEEDED COMMIT TIMESTAMPS
-           ========================================================================= */
-        const projectCatalog = [
-            { id: 'snake', name: 'Native C + SDL2 Snake Engine & Dijkstra AI', short: 'C/SDL2 Snake', icon: 'fa-gamepad' },
-            { id: 'todo_app', name: 'Reactive ToDo App & LocalStorage Risk Lab', short: 'ToDo App', icon: 'fa-list-check' },
-            { id: 'marketplace', name: 'TransporTech Marketplace (0→1 Build // NDA)', short: 'Marketplace (NDA)', icon: 'fa-store' },
-            { id: 'driverup', name: 'DriverUp TMS (Production Logistics SaaS)', short: 'DriverUp TMS', icon: 'fa-truck-fast' },
-            { id: 'expense', name: 'Full-Stack Expense Management System', short: 'Expense System', icon: 'fa-wallet' },
-            { id: 'web_apps', name: 'Live FX Currency Converter & Vue 3 Apps', short: 'FX Converter', icon: 'fa-money-bill-transfer' }
-        ];
-
-        let devLogCommits = [
-            // --- PROJECT 1: TransporTech Marketplace (0 -> 1 Greenfield Build // NDA) ---
-            {
-                id: 'mp-1',
-                projectId: 'marketplace',
-                hash: 'a19f42c',
-                date: '2026-01-08',
-                branch: 'design/problem-discovery',
-                title: 'Problem Statement Discovery & Core Marketplace Entities',
-                problem: 'Building a B2B logistics marketplace from ground zero required translating high-level business workflows into concrete software requirements and bounded domain entities.',
-                solution: 'Participated in active discovery sessions with the engineering team to map out user journeys, core marketplace actors, and service boundaries.',
-                learning: 'Spending time clarifying domain invariants before writing code prevents expensive schema rewrites later.'
-            },
-            {
-                id: 'mp-2',
-                projectId: 'marketplace',
-                hash: 'b82d10e',
-                date: '2026-01-27',
-                branch: 'design/lld-db-schema',
-                title: 'Finalizing Low-Level Design (LLD) & Relational Database Schema',
-                problem: 'Needed a normalized relational database schema and modular Low-Level Design (LLD) capable of handling marketplace listings, bids, and status transitions cleanly.',
-                solution: 'Collaborated on entity-relationship modeling, foreign-key constraints, indexing strategies, and clean Controller → Service → Repository class hierarchies.',
-                learning: 'Good LLD makes REST API implementation straightforward because every layer has a strict, well-defined contract.'
-            },
-            {
-                id: 'mp-3',
-                projectId: 'marketplace',
-                hash: 'c45a91b',
-                date: '2026-02-18',
-                branch: 'feat/rest-apis-bugfixes',
-                title: 'Building Backend REST APIs, DTO Validation & Bug Fixes',
-                problem: 'New marketplace endpoints needed strict payload validation, consistent HTTP status codes, and fixes for edge-case integration bugs.',
-                solution: 'Built RESTful API endpoints with structured request/response DTOs, error handling, and resolved backend bugs tracked in Azure DevOps.',
-                learning: 'Consistent API error responses and strict input validation make frontend integration and QA testing significantly faster.'
-            },
-            {
-                id: 'mp-4',
-                projectId: 'marketplace',
-                hash: 'd04f77c',
-                date: '2026-03-14',
-                branch: 'infra/terraform-devops',
-                title: 'Cloud Infrastructure Provisioning with Terraform & Azure DevOps',
-                problem: 'Manual environment setup across dev and staging slows down team velocity and introduces configuration drift.',
-                solution: 'Used Git feature branches, Azure DevOps boards/pipelines, and declarative Terraform scripts to track and provision infrastructure cleanly.',
-                learning: 'Infrastructure as Code (Terraform) makes cloud environments reproducible, version-controlled, and auditable.'
-            },
-
-            // --- PROJECT 2: DriverUp TMS @ TransporTech ---
-            {
-                id: 'du-1',
-                projectId: 'driverup',
-                hash: 'e31b90a',
-                date: '2026-01-19',
-                branch: 'feat/vue-components',
-                title: 'Modular Vue.js UI Components & Reactive State Binding',
-                problem: 'Needed reusable, responsive frontend views in DriverUp TMS that stayed cleanly synchronized with backend REST payloads.',
-                solution: 'Built modular Vue.js components using props/emits state flow and async REST API integration.',
-                learning: 'Keeping Vue components focused on single responsibilities makes debugging state updates effortless.'
-            },
-            {
-                id: 'du-2',
-                projectId: 'driverup',
-                hash: 'f64c23d',
-                date: '2026-02-12',
-                branch: 'fix/api-state-bugs',
-                title: 'Resolving Frontend-Backend REST Payload & Reactivity Bugs',
-                problem: 'Certain user actions in Organizer and Traffic Diary triggered stale UI state or unexpected null-reference edge cases.',
-                solution: 'Traced network payloads in DevTools, fixed backend API response handling, and added defensive state guards in Vue.',
-                learning: 'Always validate both the API response contract and empty/loading UI states to prevent edge-case crashes.'
-            },
-            {
-                id: 'du-3',
-                projectId: 'driverup',
-                hash: '198a44f',
-                date: '2026-03-02',
-                branch: 'test/qa-100-scenarios',
-                title: '100+ QA Test Scenarios Across Organizer, Traffic Diary & Settings',
-                problem: 'Complex logistics workflows across Organizer, Traffic Diary, and Account Settings required thorough regression verification before release.',
-                solution: 'Designed and executed 100+ structured QA test cases in Azure DevOps, logging reproducible steps and verifying fixes.',
-                learning: 'Testing software systematically teaches you how real users break assumptions—making you write much more defensive code.'
-            },
-
-            // --- PROJECT 3: Full-Stack Expense Management System (In Development) ---
-            {
-                id: 'ex-1',
-                projectId: 'expense',
-                hash: '412c89a',
-                date: '2026-02-09',
-                branch: 'feat/sql-ledger-schema',
-                title: 'Relational SQL Schema & Category Ledger Design',
-                problem: 'Tracking personal and team expenses requires accurate decimal storage and fast monthly aggregation queries.',
-                solution: 'Designed normalized SQL tables using `DECIMAL(12,2)` (avoiding float rounding errors) with composite indexes on `(user_id, transaction_date)`.',
-                learning: 'Never use floating-point types for monetary columns in SQL; fixed-point `DECIMAL` guarantees exact ledger math.'
-            },
-            {
-                id: 'ex-2',
-                projectId: 'expense',
-                hash: '589d31b',
-                date: '2026-02-28',
-                branch: 'feat/jwt-stateless-auth',
-                title: 'Stateless JWT Authentication & Protected REST Routes',
-                problem: 'Needed secure, stateless user authentication so each user can only query and mutate their own expense records.',
-                solution: 'Implemented Bearer JWT token verification middleware/filters and scoped all SQL queries strictly to the authenticated user ID.',
-                learning: 'Stateless JWT auth scales cleanly across APIs when paired with short token lifetimes and strict route guards.'
-            },
-            {
-                id: 'ex-3',
-                projectId: 'expense',
-                hash: '673e10f',
-                date: '2026-03-21',
-                branch: 'wip/vue-analytics-ui',
-                title: 'Reactive Vue.js Expense Dashboard & Filter Controls (WIP)',
-                problem: 'Users need instant visual feedback when adding expenses or filtering transactions by category and date range.',
-                solution: 'Building reactive Vue.js components with computed category totals and asynchronous REST API mutations.',
-                learning: 'Combining optimistic UI updates with server validation gives users a snappy app feel without sacrificing data integrity.'
-            },
-
-            // --- PROJECT 4: Native C + SDL2 Snake Engine (7 Realistic Low-Level Systems Commits) ---
-            {
-                id: 'sn-1',
-                projectId: 'snake',
-                hash: '117a55b',
-                date: '2025-11-08',
-                branch: 'feat/sdl2-event-polling',
-                title: 'Non-Blocking Event Polling (SDL_PollEvent) & 180° Input Latching',
-                problem: 'Initially, handling keyboard input inside the C game loop had two major bugs: blocking input calls froze the game frame, and pressing two perpendicular keys rapidly within the same tick (e.g., UP then LEFT in <16ms) caused the snake to fold 180 degrees directly into its own neck.',
-                solution: 'Implemented a non-blocking `while (SDL_PollEvent(&event))` queue drainer per frame and introduced an `inputLockedForTick` direction latch so only one validated 90-degree directional change executes per grid step.',
-                learning: 'Understood how OS window message queues communicate with C programs via asynchronous event polling without stalling the main execution thread.'
-            },
-            {
-                id: 'sn-2',
-                projectId: 'snake',
-                hash: '294d81c',
-                date: '2025-11-12',
-                branch: 'perf/vsync-frame-pacing',
-                title: 'Hardware VSync & Decoupling Game Speed from CPU Clock Frequency',
-                problem: 'Without frame synchronization, the C `while(running)` loop executed thousands of iterations per second—meaning the snake moved at warp speed depending on CPU turbo clock speed, spiked 1 core to 100%, and caused visible screen tearing.',
-                solution: 'Initialized the SDL2 renderer with `SDL_RENDERER_PRESENTVSYNC` so `SDL_RenderPresent()` synchronizes buffer swaps with the monitor refresh rate (60Hz/120Hz), and paired it with `SDL_GetTicks()` delta-time accumulators to step the snake at a deterministic tick interval.',
-                learning: 'Learned how VSync bridges the GPU framebuffer, monitor refresh rate (Hz), and CPU speed—preventing screen tearing while letting the CPU sleep between frames.'
-            },
-            {
-                id: 'sn-3',
-                projectId: 'snake',
-                hash: '3c8f19a',
-                date: '2025-11-16',
-                branch: 'feat/grid-quantization',
-                title: 'Discrete 2D Grid Quantization for Exact Head-to-Food Collision',
-                problem: 'When moving the snake in raw pixel coordinates, the snake head (`SDL_Rect`) would often graze the food sprite off-center by a few pixels, making collision detection feel inconsistent and visual alignment sloppy.',
-                solution: 'Quantized the entire window into a logical 2D coordinate grid (`CELL_SIZE = 20`) where both the snake head and food snap strictly to integer multiples `(gridX * CELL_SIZE, gridY * CELL_SIZE)`, reducing collision checks to exact `head.x == food.x && head.y == food.y` integer equality.',
-                learning: 'Separating logical grid coordinates from screen pixel rendering makes 2D spatial collision math 100% deterministic and lays the foundation for graph pathfinding.'
-            },
-            {
-                id: 'sn-4',
-                projectId: 'snake',
-                hash: '489c23e',
-                date: '2025-11-21',
-                branch: 'feat/dma-malloc-body',
-                title: 'Dynamic Memory Allocation (DMA via malloc/realloc) for Snake Growth',
-                problem: 'Using a fixed static array for the snake body either wastes stack memory or risks a buffer overflow once the player scores high, and resetting the game requires careful heap lifecycle management.',
-                solution: 'Implemented Dynamic Memory Allocation (DMA) on the heap using `malloc()` for the initial snake segment buffer, dynamically growing capacity via `realloc()` when food is consumed, checking for `NULL` pointers, and releasing memory via `free()` on exit.',
-                learning: 'Writing manual heap management (`malloc`, `realloc`, `free`) in C gave me a concrete understanding of pointer arithmetic, heap fragmentation, and why memory leaks happen when cleanup paths are missed.'
-            },
-            {
-                id: 'sn-5',
-                projectId: 'snake',
-                hash: '5f1a90d',
-                date: '2025-11-25',
-                branch: 'feat/prng-food-spawner',
-                title: 'PRNG Food Generation (srand/rand) with Body-Overlap Rejection',
-                problem: 'Calling `rand()` without seeding generated the exact same sequence of food coordinates every time the binary launched, and random coordinates occasionally spawned food directly underneath the snake’s body.',
-                solution: 'Seeded the pseudo-random number generator once at startup with `srand((unsigned int)time(NULL))`, clamped coordinates to grid bounds (`rand() % GRID_COLS`), and added a rejection-sampling loop that re-rolls if the candidate tile overlaps any active snake segment.',
-                learning: 'Learned how deterministic PRNG seeds work in C and why invariant validation (ensuring spawned entities never collide with occupied state) is critical in game state machines.'
-            },
-            {
-                id: 'sn-6',
-                projectId: 'snake',
-                hash: '6b3e42f',
-                date: '2025-11-29',
-                branch: 'fix/boundary-failure-logic',
-                title: 'Window Out-of-Bounds Handling & Self-Intersection Failure State Machine',
-                problem: 'When the snake head crossed `x < 0`, `x >= WINDOW_WIDTH`, `y < 0`, or `y >= WINDOW_HEIGHT`, it silently slithered off-screen into negative coordinates instead of triggering a clean Game Over state.',
-                solution: 'Built explicit boundary-check predicates and an $O(N)$ self-collision scan across segments `[1..length-1]`, transitioning the engine cleanly into a `GAME_OVER` state that halts movement and awaits an `R` key restart.',
-                learning: 'Edge-case failure handling is what separates a toy script from a resilient program—every coordinate transition must be validated against domain bounds before rendering.'
-            },
-            {
-                id: 'sn-7',
-                projectId: 'snake',
-                hash: '830e91d',
-                date: '2026-03-19',
-                branch: 'roadmap/dijkstra-ai',
-                title: 'Autonomous Self-Playing Snake Agent Powered by Dijkstra’s Algorithm',
-                problem: 'Wanted to evolve the completed C/SDL2 Snake engine into an autonomous AI agent capable of navigating the 20×20 grid to collect food without trapping itself in its own tail.',
-                solution: 'Modeled the discrete 2D grid as a graph where snake body segments act as dynamic blocked vertices, running Dijkstra’s Shortest-Path Algorithm each tick to compute the minimum-cost path from head to food.',
-                learning: 'Connecting classical graph theory (Dijkstra’s algorithm) to a real-time 60FPS game loop makes algorithmic complexity and state-space search deeply intuitive.'
-            },
-
-            // --- PROJECT 5: Reactive ToDo App (Axios, Dark/Light Theme, LocalStorage vs DB Risks) ---
-            {
-                id: 'td-1',
-                projectId: 'todo_app',
-                hash: '901a34c',
-                date: '2025-12-10',
-                branch: 'feat/reactive-crud-state',
-                title: 'Component State Architecture & Reactive Task Filtering',
-                problem: 'Mutating DOM nodes imperatively whenever a task was added, toggled, or deleted caused UI desynchronization between the task counter and the filtered list views (All / Active / Completed).',
-                solution: 'Structured a single source-of-truth state array with immutable filter projections and clean event handlers so the UI re-renders deterministically on every state transition.',
-                learning: 'Treating UI as a pure function of state eliminates entire classes of DOM synchronization bugs.'
-            },
-            {
-                id: 'td-2',
-                projectId: 'todo_app',
-                hash: 'a42b19e',
-                date: '2025-12-16',
-                branch: 'feat/axios-async-api',
-                title: 'Learning Axios & Async/Await Promise Lifecycles for Remote Sync',
-                problem: 'Needed to hydrate initial starter tasks and simulate remote API persistence, but nested Promise `.then()` chains made error handling and loading spinners hard to read and debug.',
-                solution: 'Integrated Axios with `async/await` and `try / catch / finally` blocks, configuring request timeouts, HTTP status inspection, and optimistic UI updates with automatic rollback on network failure.',
-                learning: 'Mastered how the JavaScript Event Loop, microtask queue, and Axios interceptors handle asynchronous network I/O without freezing the browser main thread.'
-            },
-            {
-                id: 'td-3',
-                projectId: 'todo_app',
-                hash: 'b78c51d',
-                date: '2025-12-22',
-                branch: 'feat/dark-light-theme',
-                title: 'Zero-Flicker Dark / Light Theme Engine with CSS Variables',
-                problem: 'Toggling between Dark and Light mode caused a brief white flash on page reload (FOUC) and inconsistent contrast ratios across form inputs and task cards.',
-                solution: 'Built a semantic CSS custom-property theme engine synced with Tailwind’s `dark` class and OS `prefers-color-scheme`, reading the persisted theme preference before first paint.',
-                learning: 'Good UX lives in the details—respecting system preferences and preventing layout/theme flicker makes a web app feel native.'
-            },
-            {
-                id: 'td-4',
-                projectId: 'todo_app',
-                hash: 'c19e64f',
-                date: '2025-12-28',
-                branch: 'feat/localstorage-hydration',
-                title: 'Client-Side Persistence Without a Database via JSON Serialization',
-                problem: 'Users lost all their tasks whenever they refreshed or closed the browser tab because state lived solely in volatile JavaScript heap memory.',
-                solution: 'Implemented a persistence layer around `window.localStorage` using `JSON.stringify()` on state mutations and defensive `try { JSON.parse() } catch` hydration on boot to recover gracefully from corrupted storage.',
-                learning: 'Learned how browser Web Storage serializes in-memory object graphs into UTF-16 strings and why schema defensive parsing is mandatory.'
-            },
-            {
-                id: 'td-5',
-                projectId: 'todo_app',
-                hash: 'd84f02a',
-                date: '2026-01-04',
-                branch: 'security/storage-risk-audit',
-                title: 'Auditing the Architectural & Security Risks of LocalStorage Without a DB',
-                problem: 'While persisting data in `localStorage` works for a standalone client app, I wanted to deeply understand why production systems do not use it as a primary database or for sensitive session data.',
-                solution: 'Documented and tested the 4 core risks of `localStorage`: (1) Vulnerability to XSS attacks (any injected script can read plain-text storage), (2) Synchronous main-thread blocking on large payloads, (3) Hard ~5MB browser quota (`QuotaExceededError`), and (4) Zero ACID transactions or multi-device consistency.',
-                learning: 'Understanding *why* a tool is dangerous at scale is what turns a frontend coder into a backend-minded developer who appreciates proper SQL databases and HttpOnly cookies.'
-            },
-
-            // --- PROJECT 6: Live FX Currency Converter & Vue 3 Task App (4 Realistic Commits) ---
-            {
-                id: 'wb-1',
-                projectId: 'web_apps',
-                hash: '502f71c',
-                date: '2026-01-20',
-                branch: 'feat/async-fx-api',
-                title: 'Async Exchange-Rate Fetching & Network Error Fallbacks',
-                problem: 'Fetching live currency rates over the network can fail on unstable connections or rate-limited public endpoints, leaving the converter UI broken.',
-                solution: 'Used modern `async/await` with `fetch()`, structured HTTP status checks (`res.ok`), and built a graceful fallback rate snapshot so the converter remains 100% functional offline.',
-                learning: 'Resilient web apps always plan for network failure—graceful degradation keeps the user experience uninterrupted.'
-            },
-            {
-                id: 'wb-2',
-                projectId: 'web_apps',
-                hash: '639a18d',
-                date: '2026-01-26',
-                branch: 'perf/rate-cache-debounce',
-                title: 'In-Memory Base-Rate Caching to Eliminate Redundant API Calls',
-                problem: 'Triggering a network request on every keystroke as a user types `1000` fires 4 separate HTTP calls in 300ms, causing race conditions and UI lag.',
-                solution: 'Cached the fetched base currency matrix in memory and decoupled network hydration from the pure mathematical conversion function so typing recalculates in <1ms with zero network overhead.',
-                learning: 'Separating I/O state hydration from pure computation is one of the highest-leverage performance patterns in software engineering.'
-            },
-            {
-                id: 'wb-3',
-                projectId: 'web_apps',
-                hash: '712c84e',
-                date: '2026-02-03',
-                branch: 'fix/ieee754-precision',
-                title: 'Handling IEEE-754 Floating-Point Precision & Locale Formatting',
-                problem: 'Raw JavaScript floating-point math (`0.1 + 0.2 === 0.30000000000000004`) produced ugly trailing decimals when converting across cross-rates like EUR → GBP → INR.',
-                solution: 'Applied cross-rate normalization through a base currency pivot and formatted outputs via `Intl.NumberFormat` / `toLocaleString` with strict 2-decimal currency rounding.',
-                learning: 'Never display raw IEEE-754 floating-point arithmetic directly in financial UIs—explicit rounding and locale-aware formatting are essential.'
-            },
-            {
-                id: 'wb-4',
-                projectId: 'web_apps',
-                hash: '774e09b',
-                date: '2026-02-11',
-                branch: 'feat/vue3-reactivity',
-                title: 'One-Click Pair Inversion & Reactive Vue 3 + Tailwind UI Polish',
-                problem: 'Users frequently wanted to flip `USD → INR` into `INR → USD` instantly without opening two separate dropdowns.',
-                solution: 'Added atomic state swap logic (`[from, to] = [to, from]`) triggering immediate reactive recalculation and styled the responsive layout with Tailwind CSS.',
-                learning: 'Small ergonomic UX touches—like single-click pair inversion—dramatically improve how polished a tool feels.'
-            }
-        ];
-
-        let activeDevLogProject = 'snake';
-        let selectedCommitId = 'sn-2';
-        let isOwnerUnlocked = false;
-        const OWNER_KEY_B64 = 'YmlzY29lMjAxNw=='; // Base64 for 'biscoe2017'
-
-        function checkPasskeyMatch(candidate) {
-            if (!candidate) return false;
-            const clean = candidate.trim().toLowerCase();
-            try {
-                return btoa(clean) === OWNER_KEY_B64 || clean === 'biscoe2017';
-            } catch (e) {
-                return clean === 'biscoe2017';
-            }
-        }
-
-        function syncOwnerUiState() {
-            const addBtn = document.getElementById('owner-add-commit-btn');
-            const exportBtn = document.getElementById('owner-export-btn');
-            const commitActions = document.getElementById('owner-commit-actions');
-            const lockIcon = document.getElementById('owner-lock-icon');
-            const lockLabel = document.getElementById('owner-lock-label');
-            const lockBtn = document.getElementById('owner-lock-btn');
-
-            if (isOwnerUnlocked) {
-                if (addBtn) {
-                    addBtn.classList.remove('hidden');
-                    addBtn.style.display = 'inline-flex';
-                }
-                if (exportBtn) {
-                    exportBtn.classList.remove('hidden');
-                    exportBtn.style.display = 'inline-flex';
-                }
-                if (commitActions) {
-                    commitActions.classList.remove('hidden');
-                    commitActions.style.display = 'flex';
-                }
-                if (lockIcon) lockIcon.className = 'fa-solid fa-lock-open text-[10px] text-emerald-400';
-                if (lockLabel) lockLabel.textContent = 'Owner Unlocked';
-                if (lockBtn) lockBtn.className = 'px-2.5 py-1 rounded-lg bg-emerald-500/15 hover:bg-rose-500/20 text-emerald-300 hover:text-rose-300 border border-emerald-500/40 font-mono text-[11px] transition flex items-center gap-1.5';
-            } else {
-                if (addBtn) {
-                    addBtn.classList.add('hidden');
-                    addBtn.style.display = 'none';
-                }
-                if (exportBtn) {
-                    exportBtn.classList.add('hidden');
-                    exportBtn.style.display = 'none';
-                }
-                if (commitActions) {
-                    commitActions.classList.add('hidden');
-                    commitActions.style.display = 'none';
-                }
-                if (lockIcon) lockIcon.className = 'fa-solid fa-lock text-[10px]';
-                if (lockLabel) lockLabel.textContent = 'Read-Only';
-                if (lockBtn) lockBtn.className = 'px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-cyber-cyan border border-slate-800 font-mono text-[11px] transition flex items-center gap-1.5';
-                toggleNewCommitForm(false);
-            }
-
-            document.querySelectorAll('.owner-card-link-label').forEach(el => {
-                if (isOwnerUnlocked) {
-                    el.textContent = '+ Add / Edit Timestamp →';
-                } else {
-                    el.textContent = 'Inspect Commit Log →';
-                }
-            });
-        }
-
-        function toggleOwnerAuthBar(forceState) {
-            if (isOwnerUnlocked && forceState === undefined) {
-                isOwnerUnlocked = false;
-                try {
-                    window.sessionStorage.removeItem('shahzaib_owner_unlocked');
-                    window.localStorage.removeItem('shahzaib_owner_unlocked');
-                } catch (e) {}
-                syncOwnerUiState();
-                showToast('DevLog Locked to Public Read-Only Mode');
-                return;
-            }
-            const bar = document.getElementById('owner-auth-bar');
-            if (!bar) return;
-            const isCurrentlyHidden = bar.style.display === 'none' || bar.classList.contains('hidden');
-            const shouldShow = forceState !== undefined ? forceState : isCurrentlyHidden;
-            if (shouldShow) {
-                bar.classList.remove('hidden');
-                bar.style.display = 'flex';
-                const input = document.getElementById('owner-passkey-input');
-                if (input) {
-                    input.value = '';
-                    setTimeout(() => input.focus(), 40);
-                }
-            } else {
-                bar.classList.add('hidden');
-                bar.style.display = 'none';
-            }
-        }
-
-        function verifyOwnerPasskey(e) {
-            if (e) e.preventDefault();
-            const input = document.getElementById('owner-passkey-input');
-            const val = input ? input.value : '';
-            if (checkPasskeyMatch(val)) {
-                isOwnerUnlocked = true;
-                try {
-                    window.sessionStorage.setItem('shahzaib_owner_unlocked', '1');
-                    window.localStorage.setItem('shahzaib_owner_unlocked', '1');
-                } catch (err) {}
-                toggleOwnerAuthBar(false);
-                syncOwnerUiState();
-                renderSelectedCommitDetails();
-                showToast('Welcome Shahzaib! Maintainer Write Mode Unlocked.');
-            } else {
-                showToast('Invalid Passkey — Read-Only Mode Active');
-                if (input) input.value = '';
-            }
-        }
-
-        function handleCardDevLogAction(projectId) {
-            openDevLogModal(projectId, isOwnerUnlocked);
-        }
-
-        function persistCommitsLocally() {
-            try {
-                window.localStorage.setItem('shahzaib_devlog_commits_v1', JSON.stringify(devLogCommits));
-            } catch (e) {}
-        }
-
-        // Merge commits arriving from Firestore without losing pre-seeded entries
-        window.mergeCloudDevLogCommits = function (cloudItems) {
-            if (!Array.isArray(cloudItems) || cloudItems.length === 0) return;
-            const byId = new Map();
-            devLogCommits.forEach(c => byId.set(c.id, c));
-            cloudItems.forEach(c => {
-                if (c && c.id) byId.set(c.id, c);
-            });
-            devLogCommits = Array.from(byId.values());
-            updateAllCommitBadges();
-            const modal = document.getElementById('devlog-modal');
-            if (!modal.classList.contains('hidden')) {
-                renderDevLogProjectTabs();
-                renderGitGraphTimeline();
-            }
-        };
-
-        function getCommitsForProject(projectId) {
-            return devLogCommits
-                .filter(c => c.projectId === projectId)
-                .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-        }
-
-        function updateAllCommitBadges() {
-            projectCatalog.forEach(p => {
-                const count = getCommitsForProject(p.id).length;
-                const badge = document.getElementById(`count-badge-${p.id}`);
-                if (badge) badge.textContent = count;
-            });
-            const total = devLogCommits.length;
-            const navBadge = document.getElementById('nav-total-commits');
-            const heroBadge = document.getElementById('hero-commit-count');
-            if (navBadge) navBadge.textContent = total;
-            if (heroBadge) heroBadge.textContent = total;
-        }
-
-        function getBranchColorMeta(branchName = '') {
-            const b = branchName.toLowerCase();
-            if (b.startsWith('feat') || b.startsWith('roadmap')) {
-                return { dot: '#00f2fe', badge: 'bg-cyber-cyan/15 text-cyber-cyan border-cyber-cyan/40', lane: 1 };
-            }
-            if (b.startsWith('fix') || b.startsWith('wip')) {
-                return { dot: '#f59e0b', badge: 'bg-amber-500/15 text-amber-300 border-amber-500/40', lane: 2 };
-            }
-            if (b.startsWith('design') || b.startsWith('test')) {
-                return { dot: '#818cf8', badge: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/40', lane: 1 };
-            }
-            if (b.startsWith('infra')) {
-                return { dot: '#f43f5e', badge: 'bg-rose-500/15 text-rose-300 border-rose-500/40', lane: 2 };
-            }
-            return { dot: '#10b981', badge: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40', lane: 0 };
-        }
-
-        function openDevLogModal(projectId = 'marketplace', openAddForm = false) {
-            activeDevLogProject = projectId;
-            const list = getCommitsForProject(projectId);
-            if (list.length > 0) {
-                selectedCommitId = list[0].id;
-            }
-            const modal = document.getElementById('devlog-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-
-            syncOwnerUiState();
-            renderDevLogProjectTabs();
-            renderGitGraphTimeline();
-            if (openAddForm && isOwnerUnlocked) {
-                toggleNewCommitForm(true);
-            } else {
-                toggleNewCommitForm(false);
-                renderSelectedCommitDetails();
-            }
-        }
-
-        function closeDevLogModal() {
-            const modal = document.getElementById('devlog-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        function switchDevLogProject(projectId) {
-            activeDevLogProject = projectId;
-            const list = getCommitsForProject(projectId);
-            selectedCommitId = list.length > 0 ? list[0].id : null;
-            toggleNewCommitForm(false);
-            renderDevLogProjectTabs();
-            renderGitGraphTimeline();
-            renderSelectedCommitDetails();
-        }
-
-        function renderDevLogProjectTabs() {
-            const container = document.getElementById('devlog-project-tabs');
-            container.innerHTML = '';
-            projectCatalog.forEach(proj => {
-                const count = getCommitsForProject(proj.id).length;
-                const isActive = proj.id === activeDevLogProject;
-                const btn = document.createElement('button');
-                btn.onclick = () => switchDevLogProject(proj.id);
-                btn.className = isActive
-                    ? 'px-3 py-1.5 rounded-xl font-mono text-xs bg-gradient-to-r from-cyber-cyan/25 to-cyber-indigo/25 text-cyber-cyan border border-cyber-cyan/50 font-semibold flex items-center gap-2 shrink-0 shadow'
-                    : 'px-3 py-1.5 rounded-xl font-mono text-xs bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 flex items-center gap-2 shrink-0 transition';
-                btn.innerHTML = `
-                    <i class="fa-solid ${proj.icon} text-[11px]"></i>
-                    <span>${proj.short}</span>
-                    <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-950/90 text-slate-300 border border-slate-700">${count}</span>
-                `;
-                container.appendChild(btn);
-            });
-        }
-
-        function renderGitGraphTimeline() {
-            const listEl = document.getElementById('git-graph-list');
-            const commits = getCommitsForProject(activeDevLogProject);
-            const projObj = projectCatalog.find(p => p.id === activeDevLogProject);
-
-            document.getElementById('git-graph-repo-header').textContent = `repo: ${projObj ? projObj.name : activeDevLogProject}`;
-            document.getElementById('git-graph-commit-count').textContent = `${commits.length} timestamp${commits.length === 1 ? '' : 's'}`;
-
-            listEl.innerHTML = '';
-
-            if (commits.length === 0) {
-                listEl.innerHTML = `
-                    <div class="p-6 text-center font-mono text-xs text-slate-400">
-                        No timestamps yet for this project. Click <strong>"+ Add Timestamp"</strong> to log your first entry!
-                    </div>
-                `;
-                return;
-            }
-
-            commits.forEach((c, idx) => {
-                const isSelected = c.id === selectedCommitId;
-                const meta = getBranchColorMeta(c.branch);
-                const isLast = idx === commits.length - 1;
-
-                const row = document.createElement('div');
-                row.onclick = () => {
-                    selectedCommitId = c.id;
-                    toggleNewCommitForm(false);
-                    renderGitGraphTimeline();
-                    renderSelectedCommitDetails();
-                };
-                row.className = `group cursor-pointer rounded-xl p-3 transition flex items-stretch gap-3 border ${
-                    isSelected
-                        ? 'bg-slate-900/95 border-cyber-cyan/60 shadow-[0_0_20px_rgba(0,242,254,0.12)]'
-                        : 'bg-slate-950/50 hover:bg-slate-900/60 border-slate-800/70 hover:border-slate-700'
-                }`;
-
-                // Git-Graph SVG Dual Rail + Branch Curve Visualization
-                row.innerHTML = `
-                    <div class="w-11 shrink-0 relative flex flex-col items-center">
-                        <svg viewBox="0 0 44 68" class="w-11 h-full overflow-visible">
-                            <!-- Main Trunk Rail (Emerald) -->
-                            <line x1="12" y1="0" x2="12" y2="${isLast ? '34' : '68'}" stroke="#10b981" stroke-width="2" stroke-opacity="0.45" />
-                            <!-- Feature Branch Rail & Curve -->
-                            ${meta.lane > 0 ? `
-                                <path d="M 12 8 C 12 18, 30 16, 30 28 L 30 42 C 30 54, 12 52, 12 64" fill="none" stroke="${meta.dot}" stroke-width="2" stroke-opacity="0.75" />
-                                <circle cx="30" cy="34" r="${isSelected ? '6' : '4.5'}" fill="#06080f" stroke="${meta.dot}" stroke-width="2.5" />
-                            ` : `
-                                <circle cx="12" cy="34" r="${isSelected ? '6' : '4.5'}" fill="#06080f" stroke="#10b981" stroke-width="2.5" />
-                            `}
-                        </svg>
-                    </div>
-                    <div class="flex-1 min-w-0 space-y-1">
-                        <div class="flex flex-wrap items-center justify-between gap-1 font-mono text-[10px]">
-                            <div class="flex items-center gap-1.5">
-                                <span class="px-1.5 py-0.2 rounded bg-slate-950 border border-slate-700 text-cyber-cyan font-bold">${c.hash}</span>
-                                <span class="px-2 py-0.2 rounded-full border ${meta.badge} truncate max-w-[130px]">${c.branch}</span>
-                            </div>
-                            <span class="text-slate-400 shrink-0">${c.date}</span>
-                        </div>
-                        <div class="font-display font-bold text-xs sm:text-sm ${isSelected ? 'text-cyber-cyan' : 'text-white group-hover:text-cyber-cyan'} truncate transition">
-                            ${c.title}
-                        </div>
-                        <p class="text-[11px] text-slate-400 line-clamp-1 font-sans">
-                            ${c.problem}
-                        </p>
-                    </div>
-                `;
-                listEl.appendChild(row);
-            });
-        }
-
-        function renderSelectedCommitDetails() {
-            const commits = getCommitsForProject(activeDevLogProject);
-            let commit = commits.find(c => c.id === selectedCommitId) || commits[0];
-            if (!commit) return;
-
-            selectedCommitId = commit.id;
-            const meta = getBranchColorMeta(commit.branch);
-
-            document.getElementById('view-commit-hash').textContent = commit.hash;
-            const branchEl = document.getElementById('view-commit-branch');
-            branchEl.textContent = commit.branch;
-            branchEl.className = `px-2.5 py-0.5 rounded-full border text-xs font-mono ${meta.badge}`;
-            document.getElementById('view-commit-date').innerHTML = `<i class="fa-regular fa-calendar mr-1"></i>${commit.date}`;
-            document.getElementById('view-commit-title').textContent = commit.title;
-            document.getElementById('view-commit-problem').textContent = commit.problem;
-            document.getElementById('view-commit-solution').textContent = commit.solution;
-            document.getElementById('view-commit-learning').textContent = commit.learning;
-        }
-
-        function toggleNewCommitForm(showForm, editCommitObj = null) {
-            if (showForm && !isOwnerUnlocked) {
-                toggleOwnerAuthBar(true);
-                return;
-            }
-            const inspectorView = document.getElementById('devlog-inspector-view');
-            const editorForm = document.getElementById('devlog-editor-form');
-
-            if (showForm) {
-                inspectorView.classList.add('hidden');
-                editorForm.classList.remove('hidden');
-
-                const todayStr = new Date().toISOString().split('T')[0];
-                if (editCommitObj) {
-                    document.getElementById('editor-form-heading').textContent = `Edit Timestamp (${editCommitObj.hash})`;
-                    document.getElementById('edit-commit-id').value = editCommitObj.id;
-                    document.getElementById('input-commit-date').value = editCommitObj.date;
-                    document.getElementById('input-commit-branch').value = editCommitObj.branch;
-                    document.getElementById('input-commit-title').value = editCommitObj.title;
-                    document.getElementById('input-commit-problem').value = editCommitObj.problem;
-                    document.getElementById('input-commit-solution').value = editCommitObj.solution;
-                    document.getElementById('input-commit-learning').value = editCommitObj.learning;
-                } else {
-                    const projObj = projectCatalog.find(p => p.id === activeDevLogProject);
-                    document.getElementById('editor-form-heading').textContent = `New Timestamp for ${projObj ? projObj.short : 'Project'}`;
-                    document.getElementById('edit-commit-id').value = '';
-                    document.getElementById('input-commit-date').value = todayStr;
-                    document.getElementById('input-commit-branch').value = 'feat/daily-update';
-                    document.getElementById('input-commit-title').value = '';
-                    document.getElementById('input-commit-problem').value = '';
-                    document.getElementById('input-commit-solution').value = '';
-                    document.getElementById('input-commit-learning').value = '';
-                }
-            } else {
-                editorForm.classList.add('hidden');
-                inspectorView.classList.remove('hidden');
-            }
-        }
-
-        function saveCommitEntry(e) {
-            e.preventDefault();
-            if (!isOwnerUnlocked) {
-                showToast('Read-Only Mode: Maintainer passkey required.');
-                return;
-            }
-            const existingId = document.getElementById('edit-commit-id').value;
-            const date = document.getElementById('input-commit-date').value;
-            const branch = document.getElementById('input-commit-branch').value.trim();
-            const title = document.getElementById('input-commit-title').value.trim();
-            const problem = document.getElementById('input-commit-problem').value.trim();
-            const solution = document.getElementById('input-commit-solution').value.trim();
-            const learning = document.getElementById('input-commit-learning').value.trim();
-
-            if (!title || !problem || !solution || !learning) return;
-
-            let savedObj = null;
-            if (existingId) {
-                const idx = devLogCommits.findIndex(c => c.id === existingId);
-                if (idx !== -1) {
-                    devLogCommits[idx] = {
-                        ...devLogCommits[idx],
-                        date,
-                        branch,
-                        title,
-                        problem,
-                        solution,
-                        learning
-                    };
-                    savedObj = devLogCommits[idx];
-                }
-            } else {
-                const randomHash = Math.random().toString(16).substring(2, 9);
-                savedObj = {
-                    id: 'commit_' + Date.now() + '_' + randomHash,
-                    projectId: activeDevLogProject,
-                    hash: randomHash,
-                    date,
-                    branch,
-                    title,
-                    problem,
-                    solution,
-                    learning
-                };
-                devLogCommits.push(savedObj);
-            }
-
-            if (savedObj) {
-                selectedCommitId = savedObj.id;
-                persistCommitsLocally();
-                if (window.persistCommitToCloud) {
-                    window.persistCommitToCloud(savedObj);
-                }
-            }
-
-            updateAllCommitBadges();
-            renderDevLogProjectTabs();
-            renderGitGraphTimeline();
-            toggleNewCommitForm(false);
-            renderSelectedCommitDetails();
-            showToast(existingId ? 'Updated Timestamp Entry!' : 'Committed New Timestamp to Git-Graph!');
-        }
-
-        function editCurrentCommit() {
-            if (!isOwnerUnlocked) return;
-            const commit = devLogCommits.find(c => c.id === selectedCommitId);
-            if (!commit) return;
-            toggleNewCommitForm(true, commit);
-        }
-
-        function deleteCurrentCommit() {
-            if (!isOwnerUnlocked) return;
-            const idx = devLogCommits.findIndex(c => c.id === selectedCommitId);
-            if (idx === -1) return;
-            const removed = devLogCommits.splice(idx, 1)[0];
-            persistCommitsLocally();
-            if (removed && window.removeCommitFromCloud) {
-                window.removeCommitFromCloud(removed.id);
-            }
-            const remaining = getCommitsForProject(activeDevLogProject);
-            selectedCommitId = remaining.length > 0 ? remaining[0].id : null;
-            updateAllCommitBadges();
-            renderDevLogProjectTabs();
-            renderGitGraphTimeline();
-            if (selectedCommitId) {
-                renderSelectedCommitDetails();
-            } else {
-                toggleNewCommitForm(false);
-            }
-            showToast(`Removed commit ${removed.hash}`);
-        }
-
-        function exportDevLogJson() {
-            const dataStr = JSON.stringify(devLogCommits, null, 2);
-            const blob = new Blob([dataStr], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'shahzaib_devlog_commits.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast('Exported DevLog Graph JSON!');
-        }
-
-        /* =========================================================================
-           2. NEURAL-NODE TOPOLOGY CANVAS BACKGROUND (60FPS INTERACTIVE)
+           2. MINIMALIST AMBIENT CONSTELLATION CANVAS (60FPS SUBTLE MOTION)
            ========================================================================= */
         const topoCanvas = document.getElementById('topology-canvas');
         const topoCtx = topoCanvas.getContext('2d');
         let particles = [];
-        const mouse = { x: -1000, y: -1000, radius: 150 };
+        const mouse = { x: -1000, y: -1000, radius: 140 };
 
         function resizeTopologyCanvas() {
             topoCanvas.width = window.innerWidth;
@@ -2795,15 +1973,15 @@
 
         function initParticles() {
             particles = [];
-            const count = Math.min(75, Math.floor((window.innerWidth * window.innerHeight) / 18000));
+            const count = Math.min(42, Math.floor((window.innerWidth * window.innerHeight) / 28000));
             for (let i = 0; i < count; i++) {
                 particles.push({
                     x: Math.random() * topoCanvas.width,
                     y: Math.random() * topoCanvas.height,
-                    vx: (Math.random() - 0.5) * 0.65,
-                    vy: (Math.random() - 0.5) * 0.65,
-                    size: Math.random() * 2 + 1,
-                    color: i % 3 === 0 ? '#00f2fe' : '#6366f1'
+                    vx: (Math.random() - 0.5) * 0.32,
+                    vy: (Math.random() - 0.5) * 0.32,
+                    size: Math.random() * 1.4 + 0.6,
+                    color: 'rgba(255, 255, 255, 0.35)'
                 });
             }
         }
@@ -2827,10 +2005,10 @@
                     const dx = p.x - p2.x;
                     const dy = p.y - p2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 130) {
+                    if (dist < 120) {
                         topoCtx.beginPath();
-                        topoCtx.strokeStyle = `rgba(0, 242, 254, ${0.14 * (1 - dist / 130)})`;
-                        topoCtx.lineWidth = 0.8;
+                        topoCtx.strokeStyle = `rgba(255, 255, 255, ${0.06 * (1 - dist / 120)})`;
+                        topoCtx.lineWidth = 0.6;
                         topoCtx.moveTo(p.x, p.y);
                         topoCtx.lineTo(p2.x, p2.y);
                         topoCtx.stroke();
@@ -2842,8 +2020,8 @@
                 const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
                 if (mDist < mouse.radius) {
                     topoCtx.beginPath();
-                    topoCtx.strokeStyle = `rgba(99, 102, 241, ${0.45 * (1 - mDist / mouse.radius)})`;
-                    topoCtx.lineWidth = 1.2;
+                    topoCtx.strokeStyle = `rgba(255, 255, 255, ${0.14 * (1 - mDist / mouse.radius)})`;
+                    topoCtx.lineWidth = 0.8;
                     topoCtx.moveTo(p.x, p.y);
                     topoCtx.lineTo(mouse.x, mouse.y);
                     topoCtx.stroke();
@@ -2855,7 +2033,7 @@
         window.addEventListener('resize', resizeTopologyCanvas);
 
         /* =========================================================================
-           3. MAGNETIC CURSOR, 3D TILT & LINKEDIN PHOTO CUSTOMIZER
+           3. MAGNETIC CURSOR, CARD SPOTLIGHT & 3D TILT
            ========================================================================= */
         const cursorDot = document.getElementById('cursor-dot');
         const cursorRing = document.getElementById('cursor-ring');
@@ -2868,6 +2046,22 @@
                 cursorDot.style.top = `${e.clientY}px`;
                 cursorRing.style.left = `${e.clientX}px`;
                 cursorRing.style.top = `${e.clientY}px`;
+            }
+            // Update interactive radial spotlight coordinates on all glass cards
+            document.querySelectorAll('.glass-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // Subtle cursor expansion on interactive elements
+        document.addEventListener('mouseover', (e) => {
+            if (!cursorRing) return;
+            if (e.target.closest('button, a, input, select, textarea, [onclick]')) {
+                cursorRing.classList.add('hovered');
+            } else {
+                cursorRing.classList.remove('hovered');
             }
         });
 
@@ -3034,7 +2228,6 @@
             avatarFxMode = mode;
             const img = document.getElementById('developer-avatar');
             const rings = document.getElementById('avatar-hud-rings');
-            const laser = document.getElementById('avatar-laser-bar');
             const coreFrame = document.getElementById('portrait-core-frame');
             const readout = document.getElementById('topology-inspector-readout');
 
@@ -3042,35 +2235,32 @@
                 const btn = document.getElementById(`fx-btn-${m}`);
                 if (!btn) return;
                 if (m === mode) {
-                    btn.className = 'px-2 py-1.5 rounded-lg bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/50 font-semibold transition truncate';
+                    btn.className = 'px-2 py-1.5 rounded-md bg-white/10 text-white border border-white/15 font-medium transition truncate';
                 } else {
-                    btn.className = 'px-2 py-1.5 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition truncate';
+                    btn.className = 'px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate';
                 }
             });
 
-            img.classList.remove('portrait-img-quantum', 'portrait-img-crimson', 'portrait-img-matrix', 'portrait-img-studio', 'holo-glitch-active');
-            laser.classList.remove('hidden', 'crimson-laser');
+            img.classList.remove('portrait-img-quantum', 'portrait-img-crimson', 'portrait-img-matrix', 'portrait-img-studio');
             rings.classList.remove('hidden');
 
             if (mode === 'quantum') {
-                img.classList.add('portrait-img-quantum', 'holo-glitch-active');
-                coreFrame.style.boxShadow = '0 0 45px rgba(0, 242, 254, 0.35)';
-                readout.innerHTML = `<span class="text-cyber-cyan">FX [QUANTUM]:</span> Triple counter-rotating HUD gyroscopes + biometric laser + chromatic glitch pulse active.`;
+                img.classList.add('portrait-img-quantum');
+                coreFrame.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.6)';
+                readout.innerHTML = `Lighting: <span class="text-zinc-200">Balanced Studio</span> — Subtle orbital geometry active.`;
             } else if (mode === 'crimson') {
-                img.classList.add('portrait-img-crimson', 'holo-glitch-active');
-                laser.classList.add('crimson-laser');
-                coreFrame.style.boxShadow = '0 0 45px rgba(244, 63, 94, 0.42)';
-                readout.innerHTML = `<span class="text-amber-300">FX [CRIMSON &amp; GOLD]:</span> Tuned to match your maroon shirt &amp; Ottoman/Iqbal classical aesthetic.`;
+                img.classList.add('portrait-img-crimson');
+                coreFrame.style.boxShadow = '0 20px 50px rgba(244, 63, 94, 0.14)';
+                readout.innerHTML = `Lighting: <span class="text-zinc-200">Warm Editorial</span> — Subtle warm tone grading.`;
             } else if (mode === 'matrix') {
-                img.classList.add('portrait-img-matrix', 'holo-glitch-active');
-                coreFrame.style.boxShadow = '0 0 45px rgba(16, 185, 129, 0.42)';
-                readout.innerHTML = `<span class="text-emerald-400">FX [MATRIX OVERDRIVE]:</span> Orbital binary/lambda glyphs + high-contrast emerald cyber telemetry.`;
+                img.classList.add('portrait-img-matrix');
+                coreFrame.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.75)';
+                readout.innerHTML = `Lighting: <span class="text-zinc-200">High-Contrast Monochrome</span> — Classic archival B&amp;W.`;
             } else if (mode === 'studio') {
                 img.classList.add('portrait-img-studio');
-                laser.classList.add('hidden');
                 rings.classList.add('hidden');
-                coreFrame.style.boxShadow = '0 0 25px rgba(148, 163, 184, 0.2)';
-                readout.innerHTML = `<span class="text-white">FX [PURE STUDIO 3D]:</span> Clean high-resolution portrait with 3D mouse-tilt &amp; studio rim vignette.`;
+                coreFrame.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.5)';
+                readout.innerHTML = `Lighting: <span class="text-zinc-200">Pure Minimal</span> — Zero orbital rings.`;
             }
         }
 
@@ -3080,14 +2270,14 @@
         let currentSlideIndex = 0;
         let isScrollAllMode = false;
         const slideMetadata = [
-            { index: 0, code: '00.HOME', title: 'OVERVIEW & BIOMETRIC HUD' },
-            { index: 1, code: '01.INTERNSHIP', title: 'SWE INTERN @ TRANSPORTECH (MARKETPLACE & TMS)' },
-            { index: 2, code: '02.STACK', title: 'BACKEND-FIRST FULL-STACK TOOLKIT' },
-            { index: 3, code: '03.SNAKE_AI', title: 'C/SDL2 SNAKE ENGINE & DIJKSTRA AUTO-PLAY AI' },
-            { index: 4, code: '04.PROJECTS', title: 'EXPENSE MANAGER, TODO LAB & FX CONVERTER' },
-            { index: 5, code: '05.ACADEMICS', title: 'UNIVERSITY OF KASHMIR CSE SGPA (8.95 ▲)' },
-            { index: 6, code: '06.BEYOND_CODE', title: 'TYNDALE-BISCOE HONORS, SWIMMING, SUMMITS & VERSE' },
-            { index: 7, code: '07.CONTACT', title: 'DIRECT CHANNELS & MESSAGE DISPATCHER' }
+            { index: 0, code: '00.Home', title: 'Overview & Profile' },
+            { index: 1, code: '01.Experience', title: 'Software Engineering Intern @ TransporTech' },
+            { index: 2, code: '02.Stack', title: 'Backend-First Technical Stack' },
+            { index: 3, code: '03.Snake_AI', title: 'C/SDL2 Snake Engine & Dijkstra AI' },
+            { index: 4, code: '04.Projects', title: 'Full-Stack & Web Applications' },
+            { index: 5, code: '05.Academics', title: 'University of Kashmir CSE (8.95 SGPA)' },
+            { index: 6, code: '06.Beyond_Code', title: 'Tyndale-Biscoe Honors & Classical Verse' },
+            { index: 7, code: '07.Contact', title: 'Direct Contact' }
         ];
 
         function goToSlide(targetIdx) {
@@ -3115,27 +2305,22 @@
                 const navBtn = document.getElementById(`nav-slide-${i}`);
                 if (navBtn) {
                     if (i === currentSlideIndex) {
-                        navBtn.className = 'slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 transition bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/40 font-semibold';
-                        // Auto-center active slide tab horizontally inside the scrollable nav bar
+                        navBtn.className = 'slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 transition bg-white/10 text-white font-medium';
                         const navContainer = document.getElementById('top-slide-nav');
                         if (navContainer) {
                             const scrollLeft = navBtn.offsetLeft - (navContainer.clientWidth / 2) + (navBtn.clientWidth / 2);
                             navContainer.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
                         }
-                    } else if (i === 3) {
-                        navBtn.className = 'slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-emerald-400 hover:text-cyber-cyan transition font-semibold';
-                    } else if (i === 6) {
-                        navBtn.className = 'slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-amber-300 hover:text-amber-200 transition font-semibold';
                     } else {
-                        navBtn.className = 'slide-nav-btn px-2.5 py-1.5 rounded-lg whitespace-nowrap shrink-0 text-slate-300 hover:text-cyber-cyan transition';
+                        navBtn.className = 'slide-nav-btn px-2.5 py-1.5 rounded-md whitespace-nowrap shrink-0 text-zinc-400 hover:text-white transition';
                     }
                 }
 
                 const dot = document.getElementById(`dock-dot-${i}`);
                 if (dot) {
                     dot.className = (i === currentSlideIndex)
-                        ? 'w-6 h-1.5 rounded-full bg-cyber-cyan transition-all'
-                        : 'w-2 h-1.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all';
+                        ? 'w-5 h-1 rounded-full bg-white transition-all'
+                        : 'w-1.5 h-1 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all';
                 }
             }
 
@@ -3143,7 +2328,7 @@
             const meta = slideMetadata[currentSlideIndex];
             const labelEl = document.getElementById('dock-slide-label');
             if (labelEl && meta) {
-                labelEl.textContent = `SLIDE 0${currentSlideIndex + 1} / 0${total} — ${meta.code} // ${meta.title}`;
+                labelEl.textContent = `0${currentSlideIndex + 1} / 0${total} — ${meta.title}`;
             }
             const progressBar = document.getElementById('slide-progress-bar');
             if (progressBar) {
