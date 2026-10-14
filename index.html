@@ -450,126 +450,96 @@
     <main id="top" class="relative z-10 flex-1 max-w-[1360px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32 flex flex-col justify-center">
 
         <!-- =========================================================================
-             SLIDE 00: HOME — PORTFOLIO LENS + HERO PITCH + STUDIO PORTRAIT
+             SLIDE 00: HOME — CONCISE MINIMALIST HERO + STUDIO PORTRAIT
              ========================================================================= -->
-        <div id="slide-0" class="slide-panel active-slide space-y-8">
-
-            <!-- Minimalist Perspective Switcher Bar -->
-            <section aria-label="Perspective Switcher">
-                <div class="glass-card rounded-xl px-4 py-2.5">
-                    <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <span class="px-2 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] font-mono text-[10px] text-zinc-400 uppercase tracking-wider shrink-0 whitespace-nowrap">
-                                Perspective
-                            </span>
-                            <p id="rbac-banner-text" class="text-xs sm:text-sm text-zinc-400 font-sans truncate">
-                                Active Lens: <strong class="text-white font-medium">Backend Developer View</strong> — Highlighting Java, Spring Boot/MVC, REST APIs, SQL Schemas &amp; Engineering DevLogs.
-                            </p>
-                        </div>
-                        <!-- Segmented Controls -->
-                        <div class="flex flex-wrap sm:flex-nowrap items-center gap-1 bg-zinc-950/90 p-1 rounded-lg border border-white/[0.06] shrink-0">
-                            <button onclick="setRbacMode('backend')" id="rbac-btn-backend" class="rbac-tab px-3 py-1.5 rounded-md text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap bg-white/10 text-white border border-white/15">
-                                <i class="fa-solid fa-server text-[10px]"></i> Backend View
-                            </button>
-                            <button onclick="setRbacMode('recruiter')" id="rbac-btn-recruiter" class="rbac-tab px-3 py-1.5 rounded-md text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap text-zinc-400 hover:text-white">
-                                <i class="fa-solid fa-briefcase text-[10px]"></i> Recruiter View
-                            </button>
-                            <button onclick="setRbacMode('playground')" id="rbac-btn-playground" class="rbac-tab px-3 py-1.5 rounded-md text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 whitespace-nowrap text-zinc-400 hover:text-white">
-                                <i class="fa-solid fa-flask text-[10px]"></i> Interactive Lab
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div id="slide-0" class="slide-panel active-slide">
 
             <!-- HERO SECTION: Clean Editorial Typography + Studio Portrait Card -->
-            <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <!-- Left Column: Hero Pitch (7 cols) -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center py-4 sm:py-8">
+                <!-- Left Column: Concise Hero Pitch (7 cols) -->
                 <div class="lg:col-span-7 space-y-6">
-                    <!-- Live Status Pill -->
-                    <div class="inline-flex flex-wrap items-center gap-2.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-zinc-300">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-                        </span>
-                        <span>Software Engineering Intern @ TransporTech • Srinagar</span>
+                    <!-- Live Status Pill + Compact Lens Pills -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-xs font-mono text-zinc-300">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                            </span>
+                            <span>SWE Intern @ TransporTech</span>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-500">•</span>
+                        <span class="text-xs font-mono text-zinc-400">B.Tech CSE '28 (UoK)</span>
                     </div>
 
                     <!-- Main Headline -->
                     <div class="space-y-3">
-                        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500">
-                            Full-Stack Developer — Primary Focus: Backend &amp; Spring Boot
-                        </p>
-                        <h1 class="font-display text-4xl sm:text-5xl xl:text-[54px] font-bold tracking-tight text-white leading-[1.08]">
-                            Engineering resilient <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">backend systems</span> &amp; full-stack web apps.
+                        <h1 class="font-display text-4xl sm:text-5xl xl:text-[56px] font-bold tracking-tight text-white leading-[1.06]">
+                            Backend systems &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500">full-stack engineering.</span>
                         </h1>
-                        <div class="h-7 flex items-center font-mono text-xs sm:text-sm text-zinc-400">
+                        <div class="h-6 flex items-center font-mono text-xs sm:text-sm text-zinc-400">
                             <span class="text-zinc-600 mr-2">~/shahzaib $</span>
                             <span id="typewriter-text" class="text-zinc-200 font-medium"></span>
                             <span class="w-1.5 h-4 bg-zinc-400 ml-1 animate-pulse"></span>
                         </div>
                     </div>
 
-                    <!-- Executive Summary -->
-                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-2xl">
-                        I'm <strong class="text-white font-medium">Shahzaib Parvaiz</strong> — a <strong class="text-zinc-200 font-medium">Full-Stack Developer specializing in Backend development with Java, Spring MVC, Spring Boot, and SQL</strong> alongside <strong class="text-zinc-200 font-medium">Vue.js</strong> and <strong class="text-zinc-200 font-medium">C</strong>. As a <strong class="text-zinc-200 font-medium">Software Engineering Intern at TransporTech</strong>, I contribute to the greenfield <span class="font-mono text-xs text-zinc-300">TransporTech Marketplace (LLD, DB Schema, REST APIs, Terraform)</span> and build Vue components &amp; bug fixes on <span class="font-mono text-xs text-zinc-300">DriverUp TMS</span>.
+                    <!-- Short, Punchy Bio (Trimmed for Minimalist Readability) -->
+                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
+                        Full-Stack Developer specializing in <strong class="text-white font-medium">Java, Spring Boot, and SQL</strong> alongside <strong class="text-zinc-200 font-medium">Vue.js</strong> and <strong class="text-zinc-200 font-medium">C</strong>. Currently building the greenfield <span class="text-zinc-200">TransporTech Marketplace</span> and <span class="text-zinc-200">DriverUp TMS</span>.
                     </p>
 
-                    <!-- Quick Metric Pills -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
-                        <div onclick="goToSlide(2)" class="glass-card rounded-xl p-3.5 cursor-pointer group">
-                            <div class="font-display text-lg sm:text-xl font-bold text-white group-hover:translate-x-0.5 transition-transform">Spring</div>
-                            <div class="text-[11px] font-mono text-zinc-500 mt-0.5">Boot • MVC • REST</div>
+                    <!-- Compact 4-Metric Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1 max-w-xl">
+                        <div onclick="goToSlide(2)" class="glass-card rounded-xl p-3 cursor-pointer group">
+                            <div class="font-display text-base sm:text-lg font-bold text-white">Spring Boot</div>
+                            <div class="text-[11px] font-mono text-zinc-500">Primary Stack</div>
                         </div>
-                        <div onclick="goToSlide(1)" class="glass-card rounded-xl p-3.5 cursor-pointer group">
-                            <div class="font-display text-lg sm:text-xl font-bold text-white group-hover:translate-x-0.5 transition-transform">0 → 1</div>
-                            <div class="text-[11px] font-mono text-zinc-500 mt-0.5">Marketplace (NDA)</div>
+                        <div onclick="goToSlide(1)" class="glass-card rounded-xl p-3 cursor-pointer group">
+                            <div class="font-display text-base sm:text-lg font-bold text-white">0 → 1</div>
+                            <div class="text-[11px] font-mono text-zinc-500">Marketplace</div>
                         </div>
-                        <div onclick="goToSlide(5)" class="glass-card rounded-xl p-3.5 cursor-pointer group">
-                            <div class="font-display text-lg sm:text-xl font-bold text-white group-hover:translate-x-0.5 transition-transform">8.95 <span class="text-emerald-400 text-xs">▲</span></div>
-                            <div class="text-[11px] font-mono text-zinc-500 mt-0.5">Latest SGPA (UoK)</div>
+                        <div onclick="goToSlide(5)" class="glass-card rounded-xl p-3 cursor-pointer group">
+                            <div class="font-display text-base sm:text-lg font-bold text-white">8.95 <span class="text-emerald-400 text-xs">▲</span></div>
+                            <div class="text-[11px] font-mono text-zinc-500">Latest SGPA</div>
                         </div>
-                        <div onclick="openDevLogModal('snake')" class="glass-card rounded-xl p-3.5 cursor-pointer group">
-                            <div class="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-1.5 group-hover:translate-x-0.5 transition-transform">
+                        <div onclick="openDevLogModal('snake')" class="glass-card rounded-xl p-3 cursor-pointer group">
+                            <div class="font-display text-base sm:text-lg font-bold text-white flex items-center gap-1">
                                 <span id="hero-commit-count">26</span>
                                 <span class="text-xs font-mono font-normal text-zinc-400">logs</span>
                             </div>
-                            <div class="text-[11px] font-mono text-zinc-400 mt-0.5 underline decoration-white/20">Git-Graph DevLog →</div>
+                            <div class="text-[11px] font-mono text-zinc-400 underline decoration-white/20">DevLog →</div>
                         </div>
                     </div>
 
-                    <!-- Hero CTA Bar -->
+                    <!-- Clean Hero CTA Bar -->
                     <div class="flex flex-wrap items-center gap-2.5 pt-1">
                         <button type="button" onclick="goToSlide(1)" class="px-5 py-2.5 rounded-lg font-sans font-medium text-xs sm:text-sm bg-white text-zinc-950 hover:bg-zinc-200 transition flex items-center gap-2 shadow-sm">
                             <span>Explore Work</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
-                        <button type="button" onclick="openDevLogModal('snake')" class="px-4 py-2.5 rounded-lg font-mono text-xs bg-white/[0.04] hover:bg-white/[0.08] text-zinc-200 border border-white/[0.08] transition flex items-center gap-2">
+                        <button type="button" onclick="openDevLogModal('snake')" class="px-4 py-2.5 rounded-lg font-mono text-xs bg-white/[0.05] hover:bg-white/[0.1] text-white border border-white/[0.1] transition flex items-center gap-2">
                             <i class="fa-solid fa-code-branch text-zinc-400"></i>
-                            <span>Engineering DevLogs</span>
+                            <span>Git-Graph DevLog</span>
                         </button>
-                        <button type="button" onclick="openPersonalVaultTab('biscoe', true)" class="px-4 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-2">
-                            <span>Biscoe Honors &amp; Verse</span>
-                        </button>
-                        <a href="https://github.com/ShahzaibParvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5">
+                        <a href="https://github.com/ShahzaibParvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5" title="GitHub">
                             <i class="fa-brands fa-github text-sm"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/shahzaib-parvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5">
+                        <a href="https://www.linkedin.com/in/shahzaib-parvaiz" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-lg font-mono text-xs bg-white/[0.03] hover:bg-white/[0.07] text-zinc-300 border border-white/[0.08] transition flex items-center gap-1.5" title="LinkedIn">
                             <i class="fa-brands fa-linkedin text-sm"></i>
                             <span>LinkedIn</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Column: MINIMALIST ARCHITECTURAL PORTRAIT STAGE & TELEMETRY CARD (5 cols) -->
+                <!-- Right Column: MINIMALIST STUDIO PORTRAIT CARD (5 cols) -->
                 <div class="lg:col-span-5">
-                    <div id="hero-tilt-card" class="tilt-card glass-card rounded-2xl p-6 relative overflow-hidden">
+                    <div id="hero-tilt-card" class="tilt-card glass-card rounded-2xl p-5 sm:p-6 relative overflow-hidden">
                         <!-- Subtle Ambient Studio Backlight -->
                         <div id="portrait-ambient-glow" class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-white/[0.04] rounded-full blur-3xl pointer-events-none"></div>
 
                         <!-- Top Card Header -->
-                        <div class="relative z-10 flex items-center justify-between gap-2 pb-4 mb-4 border-b border-white/[0.06]">
+                        <div class="relative z-10 flex items-center justify-between gap-2 pb-3 mb-3 border-b border-white/[0.06]">
                             <div class="flex items-center gap-2 min-w-0">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
                                 <span class="font-mono text-[11px] text-zinc-400 truncate">shahzaib.profile</span>
@@ -584,7 +554,7 @@
                         <div id="hero-portrait-panel" class="relative z-10 space-y-4">
 
                             <!-- Centerpiece Architectural Portrait Stage -->
-                            <div class="portrait-stage-group relative w-56 h-56 sm:w-60 sm:h-60 mx-auto flex items-center justify-center select-none"
+                            <div class="portrait-stage-group relative w-52 h-52 sm:w-56 sm:h-56 mx-auto flex items-center justify-center select-none"
                                  onmouseenter="setReactorHover(true)"
                                  onmouseleave="setReactorHover(false)">
 
@@ -599,22 +569,19 @@
                                     <g class="ring-ccw">
                                         <circle cx="140" cy="140" r="112" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
                                     </g>
-                                    <g class="ring-cw-fast">
-                                        <circle cx="140" cy="140" r="98" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="2 8" />
-                                    </g>
                                 </svg>
 
                                 <!-- Layer 3: Minimalist Floating Stack Tags -->
-                                <div class="float-node-1 absolute top-2 -left-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                <div class="float-node-1 absolute top-2 -left-1 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
                                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Spring Boot
                                 </div>
-                                <div class="float-node-2 absolute top-2 -right-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                <div class="float-node-2 absolute top-2 -right-1 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
                                     Java • SQL
                                 </div>
-                                <div class="float-node-3 absolute bottom-2 -left-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                <div class="float-node-3 absolute bottom-2 -left-1 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
                                     C • SDL2
                                 </div>
-                                <div class="float-node-4 absolute bottom-2 -right-2 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                                <div class="float-node-4 absolute bottom-2 -right-1 z-30 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-white/[0.08] font-mono text-[10px] text-zinc-300 shadow-sm flex items-center gap-1.5 whitespace-nowrap">
                                     Vue • REST
                                 </div>
 
@@ -632,59 +599,32 @@
                                 </div>
                             </div>
 
-                            <!-- Subtle Portrait Lighting Switcher -->
-                            <div class="bg-zinc-950/80 p-2 rounded-xl border border-white/[0.06] space-y-1.5">
-                                <div class="flex items-center justify-between px-1 text-[10px] font-mono text-zinc-500">
-                                    <span>Lighting Preset</span>
-                                    <span class="text-zinc-400">Interactive 3D Tilt</span>
-                                </div>
-                                <div class="grid grid-cols-4 gap-1 font-mono text-[10px]">
-                                    <button onclick="setAvatarFxMode('quantum')" id="fx-btn-quantum" class="px-2 py-1.5 rounded-md bg-white/10 text-white border border-white/15 font-medium transition truncate">
-                                        Balanced
-                                    </button>
-                                    <button onclick="setAvatarFxMode('crimson')" id="fx-btn-crimson" class="px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate">
-                                        Warm
-                                    </button>
-                                    <button onclick="setAvatarFxMode('matrix')" id="fx-btn-matrix" class="px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate">
-                                        Monochrome
-                                    </button>
-                                    <button onclick="setAvatarFxMode('studio')" id="fx-btn-studio" class="px-2 py-1.5 rounded-md bg-zinc-900/80 text-zinc-400 hover:text-white border border-transparent transition truncate">
-                                        Minimal
-                                    </button>
-                                </div>
+                            <!-- Compact 4-Preset Lighting Strip -->
+                            <div class="grid grid-cols-4 gap-1 bg-zinc-950/80 p-1 rounded-lg border border-white/[0.06] font-mono text-[10px]">
+                                <button onclick="setAvatarFxMode('quantum')" id="fx-btn-quantum" class="px-2 py-1 rounded bg-white/10 text-white border border-white/15 font-medium transition truncate">
+                                    Balanced
+                                </button>
+                                <button onclick="setAvatarFxMode('crimson')" id="fx-btn-crimson" class="px-2 py-1 rounded text-zinc-400 hover:text-white border border-transparent transition truncate">
+                                    Warm
+                                </button>
+                                <button onclick="setAvatarFxMode('matrix')" id="fx-btn-matrix" class="px-2 py-1 rounded text-zinc-400 hover:text-white border border-transparent transition truncate">
+                                    Mono
+                                </button>
+                                <button onclick="setAvatarFxMode('studio')" id="fx-btn-studio" class="px-2 py-1 rounded text-zinc-400 hover:text-white border border-transparent transition truncate">
+                                    Minimal
+                                </button>
                             </div>
-
-                            <!-- Identity Bio Metadata Strip -->
-                            <div class="bg-zinc-950/80 rounded-xl p-3.5 border border-white/[0.06] space-y-1.5">
-                                <div class="flex items-center justify-between gap-2">
-                                    <div>
-                                        <h2 class="font-display text-sm font-semibold text-white">Shahzaib Parvaiz</h2>
-                                        <p class="font-mono text-[11px] text-zinc-400">Full-Stack Developer (Primary: Backend / Spring)</p>
-                                    </div>
-                                    <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-mono text-[10px] text-emerald-400 whitespace-nowrap">
-                                        SGPA 8.95 ▲
-                                    </span>
-                                </div>
-                                <div id="topology-inspector-readout" class="font-mono text-[11px] text-zinc-500 pt-1 border-t border-white/[0.05]">
-                                    Use <kbd class="px-1 py-0.5 text-[10px] bg-zinc-900 text-zinc-300 rounded border border-white/10">←</kbd> <kbd class="px-1 py-0.5 text-[10px] bg-zinc-900 text-zinc-300 rounded border border-white/10">→</kbd> arrow keys or the top bar to navigate slides.
-                                </div>
-                            </div>
+                            <div id="topology-inspector-readout" class="hidden"></div>
                         </div>
 
                         <!-- TAB 2: Developer Profile JSON View -->
                         <div id="hero-json-panel" class="hidden relative z-10">
                             <pre class="bg-zinc-950 p-4 rounded-xl border border-white/[0.06] font-mono text-[11px] leading-relaxed text-zinc-300 overflow-x-auto"><code>{
   <span class="text-zinc-400">"name"</span>: <span class="text-white">"Shahzaib Parvaiz"</span>,
-  <span class="text-zinc-400">"role"</span>: <span class="text-white">"Full-Stack Developer (Primary: Backend / Spring)"</span>,
-  <span class="text-zinc-400">"email"</span>: <span class="text-white">"shahzaibparvaiz.dev@gmail.com"</span>,
-  <span class="text-zinc-400">"internship"</span>: {
-    <span class="text-zinc-400">"role"</span>: <span class="text-white">"Software Engineering Intern @ TransporTech"</span>,
-    <span class="text-zinc-400">"tenure"</span>: <span class="text-white">"Jan 1, 2026 - Present"</span>,
-    <span class="text-zinc-400">"projects"</span>: [<span class="text-zinc-300">"TransporTech Marketplace (0->1 NDA)"</span>, <span class="text-zinc-300">"DriverUp TMS"</span>]
-  },
-  <span class="text-zinc-400">"almaMater"</span>: [<span class="text-white">"Univ. of Kashmir (CSE '28)"</span>, <span class="text-zinc-300">"Tyndale-Biscoe School (Best All-Round Boy 2017)"</span>],
-  <span class="text-zinc-400">"sgpaTrajectory"</span>: [<span class="text-emerald-400">8.55</span>, <span class="text-emerald-400">8.75</span>, <span class="text-emerald-400">8.95</span>],
-  <span class="text-zinc-400">"coreStack"</span>: [<span class="text-white">"Java"</span>, <span class="text-white">"Spring MVC"</span>, <span class="text-white">"Spring Boot"</span>, <span class="text-white">"SQL"</span>, <span class="text-white">"C"</span>, <span class="text-white">"Vue.js"</span>, <span class="text-white">"Terraform"</span>]
+  <span class="text-zinc-400">"role"</span>: <span class="text-white">"Full-Stack Developer (Backend / Spring)"</span>,
+  <span class="text-zinc-400">"internship"</span>: <span class="text-white">"SWE Intern @ TransporTech (2026)"</span>,
+  <span class="text-zinc-400">"sgpa"</span>: [<span class="text-emerald-400">8.55</span>, <span class="text-emerald-400">8.75</span>, <span class="text-emerald-400">8.95</span>],
+  <span class="text-zinc-400">"stack"</span>: [<span class="text-white">"Java"</span>, <span class="text-white">"Spring Boot"</span>, <span class="text-white">"SQL"</span>, <span class="text-white">"C"</span>, <span class="text-white">"Vue.js"</span>]
 }</code></pre>
                         </div>
                     </div>
@@ -1957,6 +1897,648 @@
     </div>
 
     <script>
+        /* =========================================================================
+           1. GIT-GRAPH DEVLOG CATALOG & OWNER WRITE-LOCK CONTROLLER
+           ========================================================================= */
+        const projectCatalog = [
+            {
+                id: 'snake',
+                name: 'C/SDL2 Snake Engine',
+                repo: 'ShahzaibParvaiz/snake_game',
+                commits: [
+                    {
+                        id: 'snk-7',
+                        hash: '8f4a91b',
+                        date: '2026-02-18',
+                        branch: 'feat/dijkstra-ai-agent',
+                        title: 'Autonomous Dijkstra Shortest-Path Graph Solver on 20x20 Grid',
+                        problem: 'Wanted the Snake engine to play autonomously without human input by computing the optimal path around its own moving body segments at 60 FPS.',
+                        solution: 'Modeled the 20x20 grid as an unweighted directed graph where active body segments act as blocked vertices, running Dijkstra shortest-path traversal on every tick to pick the next adjacent tile.',
+                        learning: 'Real-time pathfinding on a dynamic grid requires recalculating the shortest path after every step because the tail vacates a cell as the head advances.'
+                    },
+                    {
+                        id: 'snk-6',
+                        hash: '294d81c',
+                        date: '2025-11-12',
+                        branch: 'perf/vsync-frame-pacing',
+                        title: 'Hardware VSync & Decoupling Game Speed from CPU Clock Frequency',
+                        problem: 'Without frame synchronization, the C while(running) loop executed thousands of iterations per second—meaning the snake moved at warp speed depending on CPU clock frequency and caused screen tearing.',
+                        solution: 'Initialized the SDL2 renderer with SDL_RENDERER_PRESENTVSYNC so SDL_RenderPresent() synchronizes buffer swaps with the monitor refresh rate (60Hz/120Hz), paired with SDL_GetTicks() delta-time accumulators to step the snake at a deterministic tick interval.',
+                        learning: 'Learned how hardware VSync locks frame presentation to display refresh intervals (16.67ms at 60Hz) and why game physics/movement must be decoupled from raw processor speed.'
+                    },
+                    {
+                        id: 'snk-5',
+                        hash: '7c3e10a',
+                        date: '2025-11-08',
+                        branch: 'feat/discrete-grid-math',
+                        title: 'Discrete 2D Grid Quantization for Exact Head-to-Food Collision',
+                        problem: 'When moving the snake in raw pixel coordinates, the snake head (SDL_Rect) would often graze the food sprite off-center by a few pixels, making collision detection feel inconsistent and messy.',
+                        solution: 'Partitioned the 400x400 window into a strict 20x20 logical grid (CELL_SIZE = 20px). Locked all snake coordinates and food spawns to integer multiples (gridX * CELL_SIZE, gridY * CELL_SIZE), reducing collision checks to exact head.x == food.x && head.y == food.y integer equality.',
+                        learning: 'Separating logical grid coordinates from rendered pixel coordinates eliminates bounding-box alignment bugs and makes graph algorithms like Dijkstra straightforward to layer on top.'
+                    },
+                    {
+                        id: 'snk-4',
+                        hash: '5b19c4e',
+                        date: '2025-11-04',
+                        branch: 'feat/dma-malloc-body',
+                        title: 'Dynamic Memory Allocation (DMA via malloc/realloc/free) for Snake Growth',
+                        problem: 'Using a fixed static array for the snake body either wasted memory upfront or risked buffer overflow once the player grew the snake past a hardcoded length.',
+                        solution: 'Implemented manual Dynamic Memory Allocation (DMA) on the heap using malloc() for the initial snake segment buffer, dynamically growing capacity via realloc() when food is consumed, and calling free() on shutdown.',
+                        learning: 'Hands-on mastery of C heap pointers, checking for NULL pointers after realloc(), preventing memory leaks, and understanding how dynamic arrays work under the hood.'
+                    },
+                    {
+                        id: 'snk-3',
+                        hash: '9a02f7d',
+                        date: '2025-10-29',
+                        branch: 'feat/rng-food-spawner',
+                        title: 'PRNG Food Spawning (srand/rand) with Body-Overlap Rejection',
+                        problem: 'Calling rand() without seeding generated the exact same food sequence every launch, and random coordinates occasionally spawned food directly on top of the snake body.',
+                        solution: 'Seeded the pseudo-random number generator once at startup with srand(time(NULL)), quantized coordinates via rand() % GRID_COUNT, and added a validation loop that re-rolls coordinates if they intersect any occupied body segment.',
+                        learning: 'Learned how PRNG seeding works in C and why rejection sampling is necessary when spawning entities in constrained grid states.'
+                    },
+                    {
+                        id: 'snk-2',
+                        hash: '4d81e3b',
+                        date: '2025-10-25',
+                        branch: 'fix/boundary-failure-logic',
+                        title: 'Window Boundary Failure State Machine & Self-Intersection Checks',
+                        problem: 'When the snake crossed the window edges (x < 0 or x >= WINDOW_WIDTH) or ran into its own tail, the game needed clean failure handling instead of rendering out-of-bounds memory.',
+                        solution: 'Built a deterministic boundary and self-collision check before committing each head step, transitioning the game state to GAME_OVER and allowing a clean heap reset on restart.',
+                        learning: 'Order-of-operations matters in game loops: validate next-tick coordinates against boundaries and body segments before mutating the render buffer.'
+                    },
+                    {
+                        id: 'snk-1',
+                        hash: '117a50c',
+                        date: '2025-10-20',
+                        branch: 'feat/sdl-pollevent-queue',
+                        title: 'Non-Blocking SDL_PollEvent Loop & 180-Degree Input Latching',
+                        problem: 'Handling keyboard input inside the C game loop without blocking frame rendering, and preventing a rapid two-key press (e.g., UP then LEFT in <16ms) from folding the snake 180 degrees into its own neck.',
+                        solution: 'Implemented a non-blocking while(SDL_PollEvent(&event)) queue to drain OS window/keyboard events every frame and added a direction-latch flag so only one 90-degree turn commits per grid step.',
+                        learning: 'Learned how OS window message queues communicate with C programs via asynchronous event polling without stalling the main execution thread.'
+                    }
+                ]
+            },
+            {
+                id: 'todo_app',
+                name: 'ToDo App & Storage Lab',
+                repo: 'ShahzaibParvaiz/todo-app',
+                commits: [
+                    {
+                        id: 'todo-5',
+                        hash: 'c4190ef',
+                        date: '2025-12-18',
+                        branch: 'sec/localstorage-risk-audit',
+                        title: 'Auditing LocalStorage Persistence vs. Backend Database Risks',
+                        problem: 'Persisting tasks in window.localStorage worked without a backend DB, but I wanted to document why production apps do not store sensitive user state or auth tokens in localStorage.',
+                        solution: 'Built an interactive security & architecture audit comparing localStorage against SQL databases across XSS exposure, synchronous main-thread blocking, 5MB quota limits, and lack of ACID transactions.',
+                        learning: 'Any JavaScript running on the origin (including XSS payloads) can read localStorage in plaintext; sensitive session tokens belong in HttpOnly, Secure cookies backed by a transactional database.'
+                    },
+                    {
+                        id: 'todo-4',
+                        hash: '93b12da',
+                        date: '2025-12-14',
+                        branch: 'feat/axios-async-await',
+                        title: 'Asynchronous HTTP Synchronization with Axios & Async/Await',
+                        problem: 'Fetching and syncing remote placeholder todos using nested Promise .then() chains made error handling and loading spinners hard to maintain.',
+                        solution: 'Integrated Axios with async/await and try/catch/finally blocks, configuring request timeouts and response interceptors for clean non-blocking UI updates.',
+                        learning: 'Mastered JavaScript event-loop microtasks, Axios promise lifecycle, and graceful network failure recovery without freezing the DOM.'
+                    },
+                    {
+                        id: 'todo-3',
+                        hash: '7e204cb',
+                        date: '2025-12-10',
+                        branch: 'feat/zero-flicker-theme',
+                        title: 'Zero-Flicker Dark/Light Theme Engine with System Preference Sync',
+                        problem: 'Toggling Dark/Light mode caused a brief flash of unstyled light content (FOUC) on page reload before the JavaScript bundle finished mounting.',
+                        solution: 'Combined CSS custom variables and Tailwind dark classes with an early head check that reads localStorage theme state and falls back to window.matchMedia("(prefers-color-scheme: dark)").',
+                        learning: 'Resolving theme state before first paint prevents layout/color flashes and respects OS-level accessibility preferences.'
+                    },
+                    {
+                        id: 'todo-2',
+                        hash: '5a891cc',
+                        date: '2025-12-06',
+                        branch: 'feat/local-json-hydration',
+                        title: 'Client-Side State Hydration & JSON Serialization without a DB',
+                        problem: 'Needed user tasks and completion timestamps to survive browser refreshes and tab closures without spinning up a backend database.',
+                        solution: 'Implemented a storage wrapper around JSON.stringify() and JSON.parse() with try/catch schema validation so corrupted local keys never crash app startup.',
+                        learning: 'Always wrap JSON.parse(localStorage.getItem(...)) in defensive error handling and validate data shapes before hydrating UI state.'
+                    },
+                    {
+                        id: 'todo-1',
+                        hash: '2f109ab',
+                        date: '2025-12-02',
+                        branch: 'feat/reactive-filter-views',
+                        title: 'Reactive Task Filtering (All / Active / Completed) & Atomic Counters',
+                        problem: 'Mutating the task array directly when filtering views lost the original task list and desynchronized the remaining-items counter.',
+                        solution: 'Kept a single immutable source-of-truth task array and derived filtered views (All, Active, Completed) and completion metrics via pure computed predicates.',
+                        learning: 'Deriving UI views from a single state source eliminates synchronization bugs.'
+                    }
+                ]
+            },
+            {
+                id: 'marketplace',
+                name: 'TransporTech Marketplace (NDA)',
+                repo: 'TransporTech/marketplace-core',
+                commits: [
+                    {
+                        id: 'mp-4',
+                        hash: 'e9104bc',
+                        date: '2026-03-10',
+                        branch: 'infra/terraform-azure-devops',
+                        title: 'Cloud Infrastructure Provisioning with Terraform & Azure DevOps',
+                        problem: 'Manual environment setup across dev and staging slows down team velocity and introduces configuration drift.',
+                        solution: 'Collaborated with the engineering team using Git feature workflows, Azure DevOps sprint boards/pipelines, and Terraform IaC templates to version-control cloud resources.',
+                        learning: 'Infrastructure as Code (Terraform) makes cloud environments reproducible, version-controlled, and auditable.'
+                    },
+                    {
+                        id: 'mp-3',
+                        hash: 'c7021af',
+                        date: '2026-02-24',
+                        branch: 'feat/rest-api-controllers',
+                        title: 'Building Layered REST APIs, DTO Validation & Bug Fixes',
+                        problem: 'Exposing internal persistence entities directly over REST endpoints risks leaking schema internals and accepting malformed client payloads.',
+                        solution: 'Built layered Controller -> Service -> Repository REST endpoints with strict request/response DTO validation, standardized HTTP status codes, and targeted bug fixes.',
+                        learning: 'Decoupling API contracts (DTOs) from database entities keeps REST services resilient when schemas evolve.'
+                    },
+                    {
+                        id: 'mp-2',
+                        hash: 'a4819de',
+                        date: '2026-02-05',
+                        branch: 'design/lld-db-schema',
+                        title: 'Finalizing Low-Level Design (LLD) & Normalized Relational DB Schema',
+                        problem: 'Designing a greenfield 0->1 marketplace requires clear class boundaries and a relational schema that prevents data anomalies under concurrent bookings.',
+                        solution: 'Participated in architecture sessions to finalize Low-Level Design (LLD) module contracts, foreign-key relationships, and composite B-Tree indexes.',
+                        learning: 'Investing time in LLD and database normalization upfront prevents expensive schema rewrites during API implementation.'
+                    },
+                    {
+                        id: 'mp-1',
+                        hash: '81b04fe',
+                        date: '2026-01-12',
+                        branch: 'docs/problem-discovery',
+                        title: 'Ground-Zero Problem Statement Discovery & Domain Modeling',
+                        problem: 'Starting a new product from ground zero requires translating broad business goals into concrete engineering requirements.',
+                        solution: 'Joined active problem-statement discovery sessions with senior engineers to map core marketplace actors, state transitions, and edge cases.',
+                        learning: 'Clear domain modeling is the foundation of clean backend software.'
+                    }
+                ]
+            },
+            {
+                id: 'driverup',
+                name: 'DriverUp TMS',
+                repo: 'TransporTech/driverup-tms',
+                commits: [
+                    {
+                        id: 'tms-3',
+                        hash: 'f4029cd',
+                        date: '2026-02-19',
+                        branch: 'feat/vue-tms-components',
+                        title: 'Modular Vue.js Components & REST API Integration in DriverUp TMS',
+                        problem: 'Needed reusable, reactive UI components in DriverUp TMS that stayed cleanly synchronized with backend REST payloads.',
+                        solution: 'Built modular Vue.js components using props/emits state flow and async REST API integration.',
+                        learning: 'Keeping Vue components focused on single responsibilities makes complex logistics dashboards much easier to maintain.'
+                    },
+                    {
+                        id: 'tms-2',
+                        hash: 'b8120ea',
+                        date: '2026-01-29',
+                        branch: 'fix/api-state-bugs',
+                        title: 'Resolving Frontend-Backend REST Payload & Reactivity Bugs',
+                        problem: 'Certain user actions in Organizer and Traffic Diary triggered stale UI state or mismatched API query parameters.',
+                        solution: 'Traced request payloads across browser network logs and backend endpoints, fixing state mutation bugs and edge-case null handling.',
+                        learning: 'Systematic root-cause debugging across network payloads and component state is faster than guessing at UI symptoms.'
+                    },
+                    {
+                        id: 'tms-1',
+                        hash: '63d19fa',
+                        date: '2026-01-15',
+                        branch: 'test/qa-100-scenarios',
+                        title: '100+ QA Test Scenarios Across Organizer, Traffic Diary & Account Settings',
+                        problem: 'Ensuring production reliability across high-traffic TMS modules required exhaustive regression verification.',
+                        solution: 'Executed and documented 100+ structured QA test scenarios in Azure DevOps covering Organizer, Traffic Diary, and Account Settings.',
+                        learning: 'Writing and executing thorough QA scenarios early in an internship builds deep product domain knowledge.'
+                    }
+                ]
+            },
+            {
+                id: 'expense',
+                name: 'Expense Management System',
+                repo: 'ShahzaibParvaiz/expense-system',
+                commits: [
+                    {
+                        id: 'exp-3',
+                        hash: 'd1940bc',
+                        date: '2026-03-22',
+                        branch: 'feat/vue-analytics-ui',
+                        title: 'Reactive Vue.js Expense Ledger & Category Analytics Dashboard',
+                        problem: 'Users needed instant visual feedback when adding expenses or filtering transactions by date and category.',
+                        solution: 'Building a reactive Vue.js frontend connected to secured REST endpoints with optimistic UI updates.',
+                        learning: 'Pairing clean REST API pagination with reactive frontend state keeps financial dashboards snappy.'
+                    },
+                    {
+                        id: 'exp-2',
+                        hash: '95a837b',
+                        date: '2026-03-08',
+                        branch: 'feat/stateless-jwt-auth',
+                        title: 'Stateless JWT Authentication & Role-Scoped Ledger Endpoints',
+                        problem: 'Securing multi-user expense endpoints without server-side session memory overhead.',
+                        solution: 'Implemented Bearer JWT token verification middleware/filters and scoped all SQL queries strictly to the authenticated user_id.',
+                        learning: 'Stateless JWT auth scales cleanly across APIs when paired with short token TTLs and strict user-level query scoping.'
+                    },
+                    {
+                        id: 'exp-1',
+                        hash: '41e08ca',
+                        date: '2026-02-21',
+                        branch: 'schema/sql-ledger-design',
+                        title: 'Relational SQL Schema with DECIMAL(12,2) Precision & Composite Indexes',
+                        problem: 'Storing currency values as IEEE-754 floats introduces rounding errors in financial ledgers.',
+                        solution: 'Designed normalized PostgreSQL/MySQL tables using exact DECIMAL(12,2) columns and composite indexes on (user_id, transaction_date).',
+                        learning: 'Never use floating-point types for monetary columns in SQL—fixed-point DECIMAL guarantees exact ledger math.'
+                    }
+                ]
+            },
+            {
+                id: 'web_apps',
+                name: 'FX Currency Converter',
+                repo: 'ShahzaibParvaiz/currency-converter',
+                commits: [
+                    {
+                        id: 'fx-4',
+                        hash: '88c12fa',
+                        date: '2025-10-14',
+                        branch: 'feat/pair-inversion',
+                        title: '1-Click Atomic Currency Pair Inversion & Instant Recalculation',
+                        problem: 'Users frequently wanted to flip USD -> INR into INR -> USD instantly without re-selecting both dropdowns.',
+                        solution: 'Added atomic state swap logic ([from, to] = [to, from]) triggering immediate recalculation from cached exchange rates.',
+                        learning: 'Small UX conveniences like 1-click pair inversion significantly improve utility apps.'
+                    },
+                    {
+                        id: 'fx-3',
+                        hash: '734c21e',
+                        date: '2025-10-10',
+                        branch: 'fix/ieee754-precision',
+                        title: 'IEEE-754 Floating-Point Precision & Locale Currency Formatting',
+                        problem: 'Raw JavaScript floating-point math (0.1 + 0.2 === 0.30000000000000004) produced ugly trailing decimals when converting across cross-rates.',
+                        solution: 'Applied deterministic rounding and Intl.NumberFormat locale formatting so converted outputs always render clean two-decimal currency strings.',
+                        learning: 'Always format floating-point arithmetic at the presentation boundary in financial UIs.'
+                    },
+                    {
+                        id: 'fx-2',
+                        hash: '619d0ab',
+                        date: '2025-10-06',
+                        branch: 'perf/rate-cache',
+                        title: 'In-Memory Rate Caching to Eliminate Redundant API Calls',
+                        problem: 'Triggering a network request on every keystroke in the amount input spammed the exchange-rate API.',
+                        solution: 'Cached the fetched base-rate table in memory so amount edits recalculate locally in O(1) time with zero network overhead.',
+                        learning: 'Separating I/O rate hydration from pure arithmetic calculation makes live inputs instantaneous.'
+                    },
+                    {
+                        id: 'fx-1',
+                        hash: '502f19c',
+                        date: '2025-10-02',
+                        branch: 'feat/async-fx-fetch',
+                        title: 'Async Exchange-Rate Fetching & Network Error Fallback',
+                        problem: 'Handling slow or offline network states when fetching live foreign-exchange rates.',
+                        solution: 'Used async/await with fetch(), HTTP status checks (res.ok), and a fallback rate snapshot so the converter remains 100% functional offline.',
+                        learning: 'Resilient web apps always provide a fallback state when external third-party APIs fail.'
+                    }
+                ]
+            }
+        ];
+
+        let activeDevLogProject = 'snake';
+        let activeCommitId = 'snk-7';
+        let isOwnerUnlocked = false;
+
+        window.mergeCloudDevLogCommits = function (savedList) {
+            if (!Array.isArray(savedList)) return;
+            savedList.forEach(savedProj => {
+                const target = projectCatalog.find(p => p.id === savedProj.id);
+                if (target && Array.isArray(savedProj.commits) && savedProj.commits.length > 0) {
+                    target.commits = savedProj.commits;
+                }
+            });
+        };
+
+        function persistDevLogsLocally() {
+            try {
+                window.localStorage.setItem('shahzaib_devlog_commits_v1', JSON.stringify(projectCatalog));
+            } catch (e) {}
+        }
+
+        function updateAllCommitBadges() {
+            let total = 0;
+            projectCatalog.forEach(proj => {
+                const count = proj.commits.length;
+                total += count;
+                const badge = document.getElementById(`count-badge-${proj.id}`);
+                if (badge) badge.textContent = count;
+            });
+            const navBadge = document.getElementById('nav-total-commits');
+            if (navBadge) navBadge.textContent = total;
+            const heroBadge = document.getElementById('hero-commit-count');
+            if (heroBadge) heroBadge.textContent = total;
+        }
+
+        function openDevLogModal(projectId) {
+            const targetProj = projectCatalog.find(p => p.id === projectId) || projectCatalog[0];
+            activeDevLogProject = targetProj.id;
+            activeCommitId = targetProj.commits[0] ? targetProj.commits[0].id : '';
+            toggleNewCommitForm(false);
+            renderDevLogTabs();
+            renderGitGraphList();
+            if (activeCommitId) selectCommit(activeCommitId);
+            syncOwnerUiState();
+
+            const modal = document.getElementById('devlog-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeDevLogModal() {
+            const modal = document.getElementById('devlog-modal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleCardDevLogAction(projectId) {
+            openDevLogModal(projectId);
+            if (isOwnerUnlocked) {
+                toggleNewCommitForm(true);
+            }
+        }
+
+        function renderDevLogTabs() {
+            const container = document.getElementById('devlog-project-tabs');
+            if (!container) return;
+            container.innerHTML = '';
+            projectCatalog.forEach(proj => {
+                const isActive = proj.id === activeDevLogProject;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.onclick = () => {
+                    activeDevLogProject = proj.id;
+                    activeCommitId = proj.commits[0] ? proj.commits[0].id : '';
+                    toggleNewCommitForm(false);
+                    renderDevLogTabs();
+                    renderGitGraphList();
+                    if (activeCommitId) selectCommit(activeCommitId);
+                };
+                btn.className = isActive
+                    ? 'px-3 py-1.5 rounded-lg font-mono text-xs bg-white/10 text-white border border-white/20 font-semibold whitespace-nowrap transition flex items-center gap-1.5'
+                    : 'px-3 py-1.5 rounded-lg font-mono text-xs bg-zinc-900 text-zinc-400 hover:text-white border border-white/[0.06] whitespace-nowrap transition flex items-center gap-1.5';
+                btn.innerHTML = `<span>${proj.name}</span><span class="px-1.5 py-0.2 rounded bg-white/10 text-[10px]">${proj.commits.length}</span>`;
+                container.appendChild(btn);
+            });
+        }
+
+        function renderGitGraphList() {
+            const listEl = document.getElementById('git-graph-list');
+            const headerEl = document.getElementById('git-graph-repo-header');
+            const countEl = document.getElementById('git-graph-commit-count');
+            const proj = projectCatalog.find(p => p.id === activeDevLogProject);
+            if (!listEl || !proj) return;
+
+            if (headerEl) headerEl.textContent = `repo: ${proj.repo}`;
+            if (countEl) countEl.textContent = `${proj.commits.length} timestamps`;
+
+            listEl.innerHTML = '';
+            proj.commits.forEach((c, idx) => {
+                const isSelected = c.id === activeCommitId;
+                const row = document.createElement('button');
+                row.type = 'button';
+                row.onclick = () => {
+                    toggleNewCommitForm(false);
+                    selectCommit(c.id);
+                };
+                row.className = isSelected
+                    ? 'w-full text-left p-3 rounded-xl bg-white/[0.08] border border-white/20 transition flex items-start gap-3'
+                    : 'w-full text-left p-3 rounded-xl bg-zinc-900/60 hover:bg-white/[0.04] border border-white/[0.05] transition flex items-start gap-3';
+
+                row.innerHTML = `
+                    <div class="flex flex-col items-center pt-1 shrink-0">
+                        <span class="w-3 h-3 rounded-full ${isSelected ? 'bg-white ring-4 ring-white/20' : 'bg-emerald-400/80'}"></span>
+                        ${idx < proj.commits.length - 1 ? '<span class="w-[1.5px] h-8 bg-zinc-700 mt-1"></span>' : ''}
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="flex items-center justify-between gap-2 font-mono text-[10px] text-zinc-400">
+                            <span class="text-zinc-200 font-semibold">${c.hash}</span>
+                            <span>${c.date}</span>
+                        </div>
+                        <div class="font-display font-semibold text-xs text-white truncate mt-0.5">${c.title}</div>
+                        <div class="font-mono text-[10px] text-emerald-400 truncate mt-1">${c.branch}</div>
+                    </div>
+                `;
+                listEl.appendChild(row);
+            });
+        }
+
+        function selectCommit(commitId) {
+            const proj = projectCatalog.find(p => p.id === activeDevLogProject);
+            if (!proj) return;
+            const commit = proj.commits.find(c => c.id === commitId) || proj.commits[0];
+            if (!commit) return;
+
+            activeCommitId = commit.id;
+            renderGitGraphList();
+
+            document.getElementById('view-commit-hash').textContent = commit.hash;
+            document.getElementById('view-commit-branch').textContent = commit.branch;
+            document.getElementById('view-commit-date').innerHTML = `<i class="fa-regular fa-calendar mr-1"></i>${commit.date}`;
+            document.getElementById('view-commit-title').textContent = commit.title;
+            document.getElementById('view-commit-problem').textContent = commit.problem;
+            document.getElementById('view-commit-solution').textContent = commit.solution;
+            document.getElementById('view-commit-learning').textContent = commit.learning;
+        }
+
+        function toggleNewCommitForm(show, isEdit = false) {
+            const viewEl = document.getElementById('devlog-inspector-view');
+            const formEl = document.getElementById('devlog-editor-form');
+            if (!viewEl || !formEl) return;
+
+            if (show && !isOwnerUnlocked) {
+                toggleOwnerAuthBar(true);
+                return;
+            }
+
+            if (show) {
+                viewEl.classList.add('hidden');
+                formEl.classList.remove('hidden');
+                if (!isEdit) {
+                    document.getElementById('editor-form-heading').textContent = 'Log New Project Timestamp';
+                    document.getElementById('edit-commit-id').value = '';
+                    document.getElementById('input-commit-date').value = new Date().toISOString().split('T')[0];
+                    document.getElementById('input-commit-branch').value = 'feat/';
+                    document.getElementById('input-commit-title').value = '';
+                    document.getElementById('input-commit-problem').value = '';
+                    document.getElementById('input-commit-solution').value = '';
+                    document.getElementById('input-commit-learning').value = '';
+                }
+            } else {
+                formEl.classList.add('hidden');
+                viewEl.classList.remove('hidden');
+            }
+        }
+
+        function editCurrentCommit() {
+            if (!isOwnerUnlocked) return;
+            const proj = projectCatalog.find(p => p.id === activeDevLogProject);
+            if (!proj) return;
+            const commit = proj.commits.find(c => c.id === activeCommitId);
+            if (!commit) return;
+
+            toggleNewCommitForm(true, true);
+            document.getElementById('editor-form-heading').textContent = `Edit Timestamp (${commit.hash})`;
+            document.getElementById('edit-commit-id').value = commit.id;
+            document.getElementById('input-commit-date').value = commit.date;
+            document.getElementById('input-commit-branch').value = commit.branch;
+            document.getElementById('input-commit-title').value = commit.title;
+            document.getElementById('input-commit-problem').value = commit.problem;
+            document.getElementById('input-commit-solution').value = commit.solution;
+            document.getElementById('input-commit-learning').value = commit.learning;
+        }
+
+        function deleteCurrentCommit() {
+            if (!isOwnerUnlocked) return;
+            const proj = projectCatalog.find(p => p.id === activeDevLogProject);
+            if (!proj || proj.commits.length <= 1) {
+                showToast('Cannot delete the last remaining commit in a repository.');
+                return;
+            }
+            proj.commits = proj.commits.filter(c => c.id !== activeCommitId);
+            activeCommitId = proj.commits[0].id;
+            persistDevLogsLocally();
+            updateAllCommitBadges();
+            renderDevLogTabs();
+            renderGitGraphList();
+            selectCommit(activeCommitId);
+            showToast('Deleted timestamp entry.');
+        }
+
+        function saveCommitEntry(e) {
+            e.preventDefault();
+            if (!isOwnerUnlocked) return;
+            const proj = projectCatalog.find(p => p.id === activeDevLogProject);
+            if (!proj) return;
+
+            const editId = document.getElementById('edit-commit-id').value;
+            const date = document.getElementById('input-commit-date').value;
+            const branch = document.getElementById('input-commit-branch').value.trim();
+            const title = document.getElementById('input-commit-title').value.trim();
+            const problem = document.getElementById('input-commit-problem').value.trim();
+            const solution = document.getElementById('input-commit-solution').value.trim();
+            const learning = document.getElementById('input-commit-learning').value.trim();
+
+            if (editId) {
+                const existing = proj.commits.find(c => c.id === editId);
+                if (existing) {
+                    existing.date = date;
+                    existing.branch = branch;
+                    existing.title = title;
+                    existing.problem = problem;
+                    existing.solution = solution;
+                    existing.learning = learning;
+                }
+                activeCommitId = editId;
+            } else {
+                const newId = proj.id + '-' + Date.now();
+                const newHash = Math.random().toString(16).substring(2, 9);
+                proj.commits.unshift({
+                    id: newId,
+                    hash: newHash,
+                    date,
+                    branch,
+                    title,
+                    problem,
+                    solution,
+                    learning
+                });
+                activeCommitId = newId;
+            }
+
+            persistDevLogsLocally();
+            updateAllCommitBadges();
+            toggleNewCommitForm(false);
+            renderDevLogTabs();
+            renderGitGraphList();
+            selectCommit(activeCommitId);
+            showToast('Saved timestamp to Git-Graph DevLog!');
+        }
+
+        function exportDevLogJson() {
+            const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(projectCatalog, null, 2));
+            const a = document.createElement('a');
+            a.setAttribute('href', dataStr);
+            a.setAttribute('download', 'shahzaib_devlog_commits.json');
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            showToast('Exported DevLog JSON!');
+        }
+
+        function toggleOwnerAuthBar(forceState) {
+            if (isOwnerUnlocked && forceState === undefined) {
+                isOwnerUnlocked = false;
+                try {
+                    window.sessionStorage.removeItem('shahzaib_owner_unlocked');
+                    window.localStorage.removeItem('shahzaib_owner_unlocked');
+                } catch (e) {}
+                syncOwnerUiState();
+                toggleNewCommitForm(false);
+                showToast('DevLog locked back to Read-Only mode.');
+                return;
+            }
+            const bar = document.getElementById('owner-auth-bar');
+            if (!bar) return;
+            const shouldShow = forceState !== undefined ? forceState : (bar.style.display === 'none');
+            bar.style.display = shouldShow ? 'flex' : 'none';
+            if (shouldShow) {
+                setTimeout(() => {
+                    const inp = document.getElementById('owner-passkey-input');
+                    if (inp) inp.focus();
+                }, 50);
+            }
+        }
+
+        function verifyOwnerPasskey(e) {
+            if (e) e.preventDefault();
+            const inp = document.getElementById('owner-passkey-input');
+            const val = inp ? inp.value.trim().toLowerCase() : '';
+            if (val === 'biscoe2017') {
+                isOwnerUnlocked = true;
+                if (inp) inp.value = '';
+                try {
+                    window.sessionStorage.setItem('shahzaib_owner_unlocked', '1');
+                    window.localStorage.setItem('shahzaib_owner_unlocked', '1');
+                } catch (err) {}
+                toggleOwnerAuthBar(false);
+                syncOwnerUiState();
+                showToast('Maintainer Write Access Unlocked!');
+            } else {
+                showToast('Invalid maintainer passkey.');
+            }
+        }
+
+        function syncOwnerUiState() {
+            const addBtn = document.getElementById('owner-add-commit-btn');
+            const expBtn = document.getElementById('owner-export-btn');
+            const actBox = document.getElementById('owner-commit-actions');
+            const lockIcon = document.getElementById('owner-lock-icon');
+            const lockLabel = document.getElementById('owner-lock-label');
+
+            if (addBtn) addBtn.style.display = isOwnerUnlocked ? 'inline-flex' : 'none';
+            if (expBtn) expBtn.style.display = isOwnerUnlocked ? 'inline-flex' : 'none';
+            if (actBox) actBox.style.display = isOwnerUnlocked ? 'flex' : 'none';
+            if (lockIcon) lockIcon.className = isOwnerUnlocked ? 'fa-solid fa-lock-open text-emerald-400 text-[10px]' : 'fa-solid fa-lock text-[10px]';
+            if (lockLabel) lockLabel.textContent = isOwnerUnlocked ? 'Owner Unlocked' : 'Read-Only';
+
+            document.querySelectorAll('.owner-card-link-label').forEach(el => {
+                el.textContent = isOwnerUnlocked ? '+ Add / Edit Timestamp →' : 'Inspect Commits →';
+            });
+        }
+
         /* =========================================================================
            2. MINIMALIST AMBIENT CONSTELLATION CANVAS (60FPS SUBTLE MOTION)
            ========================================================================= */
