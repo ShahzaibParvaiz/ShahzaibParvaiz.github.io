@@ -1785,11 +1785,11 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <!-- Owner-Only Controls (Hidden for Public Visitors) -->
-                    <button type="button" id="owner-add-commit-btn" onclick="toggleNewCommitForm(true)" class="hidden px-3 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-semibold transition items-center gap-1.5">
+                    <button type="button" id="owner-add-commit-btn" onclick="toggleNewCommitForm(true)" style="display: none;" class="px-3 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-mono text-xs font-semibold transition items-center gap-1.5">
                         <i class="fa-solid fa-plus"></i>
                         <span>+ Add Timestamp</span>
                     </button>
-                    <button type="button" id="owner-export-btn" onclick="exportDevLogJson()" class="hidden px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-mono text-xs transition items-center gap-1">
+                    <button type="button" id="owner-export-btn" onclick="exportDevLogJson()" style="display: none;" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-mono text-xs transition items-center gap-1">
                         <i class="fa-solid fa-download text-cyber-cyan"></i>
                         <span>Export JSON</span>
                     </button>
@@ -1805,14 +1805,14 @@
             </div>
 
             <!-- Inline Owner Passkey Bar (Hidden until Shahzaib clicks the Lock icon) -->
-            <form id="owner-auth-bar" onsubmit="verifyOwnerPasskey(event)" class="hidden px-4 sm:px-6 py-2.5 bg-slate-950 border-b border-cyber-cyan/30 items-center justify-between gap-3">
+            <form id="owner-auth-bar" onsubmit="verifyOwnerPasskey(event)" style="display: none;" class="px-4 sm:px-6 py-2.5 bg-slate-950 border-b border-cyber-cyan/30 items-center justify-between gap-3">
                 <div class="flex items-center gap-2 font-mono text-xs text-cyber-cyan">
                     <i class="fa-solid fa-key"></i>
                     <span>Maintainer Passkey (Shahzaib Only):</span>
                 </div>
                 <div class="flex items-center gap-2 flex-1 max-w-sm">
                     <input id="owner-passkey-input" type="password" autocomplete="off" placeholder="Enter maintainer passkey..." class="w-full bg-slate-900 border border-slate-700 focus:border-cyber-cyan rounded-lg px-3 py-1 font-mono text-xs text-white focus:outline-none">
-                    <button type="submit" class="px-3 py-1 rounded-lg bg-cyber-cyan text-slate-950 font-mono text-xs font-bold hover:opacity-90 transition shrink-0">
+                    <button type="submit" onclick="verifyOwnerPasskey(event)" class="px-3 py-1 rounded-lg bg-cyber-cyan text-slate-950 font-mono text-xs font-bold hover:opacity-90 transition shrink-0">
                         Unlock
                     </button>
                     <button type="button" onclick="toggleOwnerAuthBar(false)" class="px-2 py-1 rounded-lg bg-slate-900 text-slate-400 hover:text-white font-mono text-xs">
@@ -1850,7 +1850,7 @@
                                 <span id="view-commit-date" class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i>2025-11-12</span>
                             </div>
                             <!-- Owner-Only Edit / Delete Buttons (Hidden for Public Visitors) -->
-                            <div id="owner-commit-actions" class="hidden items-center gap-1.5 font-mono text-xs">
+                            <div id="owner-commit-actions" style="display: none;" class="items-center gap-1.5 font-mono text-xs">
                                 <button type="button" onclick="editCurrentCommit()" class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 transition">
                                     <i class="fa-solid fa-pen-to-square text-cyber-cyan mr-1"></i>Edit
                                 </button>
@@ -2310,15 +2310,16 @@
         let activeDevLogProject = 'snake';
         let selectedCommitId = 'sn-2';
         let isOwnerUnlocked = false;
-        // Obfuscated byte signature so plaintext passkey is never exposed in page source
-        const OWNER_KEY_BYTES = [16, 59, 33, 49, 61, 55, 96, 98, 99, 101];
+        const OWNER_KEY_B64 = 'YmlzY29lMjAxNw=='; // Base64 for 'biscoe2017'
 
         function checkPasskeyMatch(candidate) {
-            if (!candidate || candidate.length !== OWNER_KEY_BYTES.length) return false;
-            for (let i = 0; i < OWNER_KEY_BYTES.length; i++) {
-                if ((candidate.charCodeAt(i) ^ 82) !== OWNER_KEY_BYTES[i]) return false;
+            if (!candidate) return false;
+            const clean = candidate.trim().toLowerCase();
+            try {
+                return btoa(clean) === OWNER_KEY_B64 || clean === 'biscoe2017';
+            } catch (e) {
+                return clean === 'biscoe2017';
             }
-            return true;
         }
 
         function syncOwnerUiState() {
@@ -2330,16 +2331,34 @@
             const lockBtn = document.getElementById('owner-lock-btn');
 
             if (isOwnerUnlocked) {
-                if (addBtn) { addBtn.classList.remove('hidden'); addBtn.classList.add('flex'); }
-                if (exportBtn) { exportBtn.classList.remove('hidden'); exportBtn.classList.add(' hidden', 'sm:flex'); exportBtn.classList.remove('hidden'); }
-                if (commitActions) { commitActions.classList.remove('hidden'); commitActions.classList.add('flex'); }
+                if (addBtn) {
+                    addBtn.classList.remove('hidden');
+                    addBtn.style.display = 'inline-flex';
+                }
+                if (exportBtn) {
+                    exportBtn.classList.remove('hidden');
+                    exportBtn.style.display = 'inline-flex';
+                }
+                if (commitActions) {
+                    commitActions.classList.remove('hidden');
+                    commitActions.style.display = 'flex';
+                }
                 if (lockIcon) lockIcon.className = 'fa-solid fa-lock-open text-[10px] text-emerald-400';
                 if (lockLabel) lockLabel.textContent = 'Owner Unlocked';
                 if (lockBtn) lockBtn.className = 'px-2.5 py-1 rounded-lg bg-emerald-500/15 hover:bg-rose-500/20 text-emerald-300 hover:text-rose-300 border border-emerald-500/40 font-mono text-[11px] transition flex items-center gap-1.5';
             } else {
-                if (addBtn) { addBtn.classList.add('hidden'); addBtn.classList.remove('flex'); }
-                if (exportBtn) { exportBtn.classList.add('hidden'); exportBtn.classList.remove('sm:flex'); }
-                if (commitActions) { commitActions.classList.add('hidden'); commitActions.classList.remove('flex'); }
+                if (addBtn) {
+                    addBtn.classList.add('hidden');
+                    addBtn.style.display = 'none';
+                }
+                if (exportBtn) {
+                    exportBtn.classList.add('hidden');
+                    exportBtn.style.display = 'none';
+                }
+                if (commitActions) {
+                    commitActions.classList.add('hidden');
+                    commitActions.style.display = 'none';
+                }
                 if (lockIcon) lockIcon.className = 'fa-solid fa-lock text-[10px]';
                 if (lockLabel) lockLabel.textContent = 'Read-Only';
                 if (lockBtn) lockBtn.className = 'px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-cyber-cyan border border-slate-800 font-mono text-[11px] transition flex items-center gap-1.5';
@@ -2358,17 +2377,21 @@
         function toggleOwnerAuthBar(forceState) {
             if (isOwnerUnlocked && forceState === undefined) {
                 isOwnerUnlocked = false;
-                try { window.sessionStorage.removeItem('shahzaib_owner_unlocked'); } catch (e) {}
+                try {
+                    window.sessionStorage.removeItem('shahzaib_owner_unlocked');
+                    window.localStorage.removeItem('shahzaib_owner_unlocked');
+                } catch (e) {}
                 syncOwnerUiState();
                 showToast('DevLog Locked to Public Read-Only Mode');
                 return;
             }
             const bar = document.getElementById('owner-auth-bar');
             if (!bar) return;
-            const shouldShow = forceState !== undefined ? forceState : bar.classList.contains('hidden');
+            const isCurrentlyHidden = bar.style.display === 'none' || bar.classList.contains('hidden');
+            const shouldShow = forceState !== undefined ? forceState : isCurrentlyHidden;
             if (shouldShow) {
                 bar.classList.remove('hidden');
-                bar.classList.add('flex');
+                bar.style.display = 'flex';
                 const input = document.getElementById('owner-passkey-input');
                 if (input) {
                     input.value = '';
@@ -2376,22 +2399,26 @@
                 }
             } else {
                 bar.classList.add('hidden');
-                bar.classList.remove('flex');
+                bar.style.display = 'none';
             }
         }
 
         function verifyOwnerPasskey(e) {
-            e.preventDefault();
+            if (e) e.preventDefault();
             const input = document.getElementById('owner-passkey-input');
-            const val = input ? input.value.trim() : '';
+            const val = input ? input.value : '';
             if (checkPasskeyMatch(val)) {
                 isOwnerUnlocked = true;
-                try { window.sessionStorage.setItem('shahzaib_owner_unlocked', '1'); } catch (err) {}
+                try {
+                    window.sessionStorage.setItem('shahzaib_owner_unlocked', '1');
+                    window.localStorage.setItem('shahzaib_owner_unlocked', '1');
+                } catch (err) {}
                 toggleOwnerAuthBar(false);
                 syncOwnerUiState();
+                renderSelectedCommitDetails();
                 showToast('Welcome Shahzaib! Maintainer Write Mode Unlocked.');
             } else {
-                showToast('Access Denied: Read-Only Mode Active');
+                showToast('Invalid Passkey — Read-Only Mode Active');
                 if (input) input.value = '';
             }
         }
@@ -3828,7 +3855,7 @@ LinkedIn: https://www.linkedin.com/in/shahzaib-parvaiz`,
                         window.mergeCloudDevLogCommits(parsed);
                     }
                 }
-                if (window.sessionStorage.getItem('shahzaib_owner_unlocked') === '1') {
+                if (window.sessionStorage.getItem('shahzaib_owner_unlocked') === '1' || window.localStorage.getItem('shahzaib_owner_unlocked') === '1') {
                     isOwnerUnlocked = true;
                 }
             } catch (e) {}
